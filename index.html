@@ -565,7 +565,7 @@
           <label for="unitPrice">客単価（組単価）</label>
           <span class="hint">1人・1回あたりの購入額</span>
         </div>
-        <input type="range" id="unitPriceRange" min="500" max="50000" step="500" value="5000" aria-hidden="true" tabindex="-1" />
+        <input type="range" id="unitPriceRange" min="100" max="50000" step="500" value="5000" aria-hidden="true" tabindex="-1" />
         <div class="field-input-row">
           <input type="text" id="unitPrice" value="5,000" inputmode="numeric" />
           <span class="field-suffix">円</span>
@@ -577,7 +577,7 @@
           <label for="normalNew">月の通常新規獲得数</label>
           <span class="hint">広告なしで通常獲得できる人数（参考値）</span>
         </div>
-        <input type="range" id="normalNewRange" min="0" max="100" step="1" value="10" aria-hidden="true" tabindex="-1" />
+        <input type="range" id="normalNewRange" min="0" max="1000" step="1" value="10" aria-hidden="true" tabindex="-1" />
         <div class="field-input-row">
           <input type="number" id="normalNew" value="10" min="0" step="1" inputmode="numeric" />
           <span class="field-suffix">人 / 月</span>
@@ -740,7 +740,7 @@
     monthlyList: document.getElementById("monthlyList")
   };
 
-  var BASE_PRICE_RANGE = { min: 500, max: 50000, step: 500 };
+  var BASE_PRICE_RANGE = { min: 100, max: 50000, step: 500 };
 
   var PRESETS = {
     gourmet: { unitPrice: 3500, normalNew: 20, repeatRate: 30, revisitInterval: 1, adNew: 30, adArea: "一宮", freq: 1 },
