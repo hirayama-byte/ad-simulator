@@ -565,7 +565,7 @@
           <label for="unitPrice">客単価（組単価）</label>
           <span class="hint">1人・1回あたりの購入額</span>
         </div>
-        <input type="range" id="unitPriceRange" min="100" max="50000" step="100" value="5000" aria-hidden="true" tabindex="-1" />
+        <input type="range" id="unitPriceRange" min="100" max="50000" step="any" value="5000" aria-hidden="true" tabindex="-1" />
         <div class="field-input-row">
           <input type="text" id="unitPrice" value="5,000" inputmode="numeric" />
           <span class="field-suffix">円</span>
@@ -740,7 +740,7 @@
     monthlyList: document.getElementById("monthlyList")
   };
 
-  var BASE_PRICE_RANGE = { min: 100, max: 50000, step: 100 };
+  var BASE_PRICE_RANGE = { min: 100, max: 50000, step: "any" };
 
   var PRESETS = {
     gourmet: { unitPrice: 3500, normalNew: 20, repeatRate: 30, revisitInterval: 1, adNew: 30, adArea: "一宮", freq: 1 },
@@ -802,7 +802,7 @@
     return Number(digits).toLocaleString("ja-JP");
   }
 
-  function pairCommaInputs(numberEl, rangeEl) {
+  function pairCommaInputs(numberEl, rangeEl, snapFn) {
     numberEl.addEventListener("input", function () {
       var caret = numberEl.selectionStart;
       var digitsBeforeCaret = numberEl.value.slice(0, caret).replace(/[^0-9]/g, "").length;
@@ -824,13 +824,28 @@
     });
     if (rangeEl) {
       rangeEl.addEventListener("input", function () {
-        numberEl.value = Number(rangeEl.value).toLocaleString("ja-JP");
+        var v = Number(rangeEl.value);
+        if (snapFn) {
+          v = snapFn(v);
+          rangeEl.value = v;
+        }
+        numberEl.value = v.toLocaleString("ja-JP");
         render();
       });
     }
   }
 
-  pairCommaInputs(els.unitPrice, els.unitPriceRange);
+  function snapUnitPrice(raw) {
+    var maxNow = Number(els.unitPriceRange.max);
+    if (maxNow > 50000) {
+      var stepNow = Number(els.unitPriceRange.step) || 1;
+      return Math.round(raw / stepNow) * stepNow;
+    }
+    if (raw <= 1000) return Math.round(raw / 100) * 100;
+    return Math.round(raw / 500) * 500;
+  }
+
+  pairCommaInputs(els.unitPrice, els.unitPriceRange, snapUnitPrice);
   pairInputs(els.normalNew, els.normalNewRange);
   pairInputs(els.repeatRate, els.repeatRateRange);
   pairInputs(els.adNew, els.adNewRange);
