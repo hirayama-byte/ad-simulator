@@ -787,9 +787,9 @@
           <label for="adNew">目標の新規獲得数</label>
           <span class="hint">広告・販促で毎月上乗せしたい新規客数</span>
         </div>
-        <input type="range" id="adNewRange" min="0" max="1000" step="1" value="30" />
+        <input type="range" id="adNewRange" min="0" max="1000" step="1" value="45" />
         <div class="field-input-row">
-          <input type="number" id="adNew" value="30" min="0" step="1" inputmode="numeric" />
+          <input type="number" id="adNew" value="45" min="0" step="1" inputmode="numeric" />
           <span class="field-suffix">人 / 月</span>
         </div>
         <p class="note-line" id="targetYearNote"></p>
@@ -830,9 +830,9 @@
           <label for="cpa">CPA（新規1人あたりの販促費）</label>
           <span class="hint">相場を自動入力します。自社の実績値があれば書き換えてください</span>
         </div>
-        <input type="range" id="cpaRange" min="0" max="5000" step="100" value="1500" />
+        <input type="range" id="cpaRange" min="0" max="5000" step="100" value="1200" />
         <div class="field-input-row">
-          <input type="text" id="cpa" value="1,500" inputmode="numeric" />
+          <input type="text" id="cpa" value="1,200" inputmode="numeric" />
           <span class="field-suffix">円 / 人</span>
         </div>
         <p class="note-line" id="cpaNote"></p>
@@ -908,9 +908,9 @@
           <label for="normalNew">月の通常新規獲得数</label>
           <span class="hint">広告なしで通常獲得できる人数（参考値）</span>
         </div>
-        <input type="range" id="normalNewRange" min="0" max="1000" step="1" value="20" aria-hidden="true" tabindex="-1" />
+        <input type="range" id="normalNewRange" min="0" max="1000" step="1" value="30" aria-hidden="true" tabindex="-1" />
         <div class="field-input-row">
-          <input type="number" id="normalNew" value="20" min="0" step="1" inputmode="numeric" />
+          <input type="number" id="normalNew" value="30" min="0" step="1" inputmode="numeric" />
           <span class="field-suffix">人 / 月</span>
         </div>
         <p class="note-line" id="adNewNote"></p>
@@ -1020,16 +1020,18 @@
 
   <section class="card assumptions" aria-label="この試算の考え方">
     <h2 class="section-title">この試算の考え方</h2>
-    <p><strong>CPA（顧客獲得単価）</strong>は「販促費 ÷ 獲得できた新規客数」で、新規1人を獲得するのにかかった費用です。STEP2のCPA相場は、公開されているリスティング広告の業界別平均CPAと、業種ごとの「客単価に対して許容できる販促費の割合」（美容室なら客単価の20〜30%、住宅なら契約金額の3%前後）をもとにした目安値です。</p>
+    <p><strong>CPA（顧客獲得単価）</strong>は「販促費 ÷ 獲得できた新規客数」で、新規1人を獲得するのにかかった費用です。STEP2のCPA相場は、<strong>紙媒体（新聞折込・地域情報誌）の業種別反響率から逆算</strong>した値です。計算式は <strong>CPA ＝ 掲載費 ÷（配布部数 × 反響率 × 成約率）</strong>。一宮版を配布部数5万部・掲載費75,000円/回（住宅枠は225,000円/回）として算出しています。</p>
+    <p>ネット広告（リスティング）の業界別平均CPAは紙媒体より高く出るため、そのままでは使えません。たとえば飲食店の折込は反響率0.05〜0.5%＝5万部で25〜250件の反響が見込めるので、CPAは300〜3,000円の水準になります。業種ごとに「反響がそのまま来店になるか（飲食・美容・クリニック）」「反響から成約までに絞り込みがあるか（塾・不動産・住宅）」を分けて成約率を掛けています。あわせて、業種ごとの「客単価に対して許容できる販促費の割合」（美容室なら客単価の20〜30%、住宅なら契約金額の3%前後）でも妥当性を確認しています。</p>
     <p>STEP3の<strong>「必要な販促費」は、チラシ・情報誌・Web・SNSなどすべての販促手段を合わせた全販促費</strong>の目安です。STEP5の費用対効果シミュレーションは、そのうち<strong>当社媒体に出稿した場合</strong>の売上・損益を計算しています。両者は範囲が違うため、STEP3では「必要販促費のうち当社媒体が占める割合」を並べて表示しています。</p>
     <p>広告経由の来店者数は、<strong>「広告を掲載した月に加わる新規集客数」＋「来店頻度のタイミングで発生するリピート来店数（新規集客数×リピート率）」</strong>として計算しています。リピート来店は広告を実施した回数を基準に発生し、2回目以降の掲載タイミングのうち「来店頻度」で選んだ間隔ごとにだけ計上されます（広告を打っていない月には発生しません）。</p>
     <p>売上・損益は、あくまで<strong>広告によって上乗せされた分</strong>のみを計算しています。「月の通常新規獲得数」は比較の目安としての参考値で、試算そのものには影響しません。</p>
     <p>CPAも反響も、季節・競合・原稿内容・立地など様々な要因で変動します。この試算は打ち合わせ時の目安としてご活用ください。</p>
     <ul class="source-list">
-      <li>CPA相場の参考：<a href="https://goleadgrid.com/blog/about-cpa" target="_blank" rel="noopener">顧客獲得単価（CPA）の業界別相場（LeadGrid）</a></li>
-      <li><a href="https://www.top-ad.co.jp/blog/archives/688" target="_blank" rel="noopener">美容室は新規集客単価【CPA】を知るべし（トップ広告社）</a></li>
+      <li>反響率の参考：<a href="https://www.meiko-kikaku.co.jp/blog/news/15387/" target="_blank" rel="noopener">チラシの反響率の目安はどれくらい？業種別の相場と上げ方【2026年版】（明光企画）</a></li>
+      <li><a href="https://chuco-ms.co.jp/media/category-5/post-133/" target="_blank" rel="noopener">チラシの反響率はどれくらい？目安や計算方法（中広メディアソリューションズ）</a></li>
+      <li><a href="https://kagurazaka-editors.jp/echo-rate-of-flyers/" target="_blank" rel="noopener">折込チラシの反響率は？効果測定に必要な反響率の考え方</a></li>
+      <li>許容CPAの参考：<a href="https://www.top-ad.co.jp/blog/archives/688" target="_blank" rel="noopener">美容室は新規集客単価【CPA】を知るべし（トップ広告社）</a></li>
       <li><a href="https://freedom-mkt.co.jp/gmag/1925/" target="_blank" rel="noopener">ハウスメーカー・工務店のCPA相場（FREEDOM）</a></li>
-      <li><a href="https://dgtrends.com/blogs/cost_cpa/" target="_blank" rel="noopener">リスティング広告のCPA目安・相場を業界別に解説</a></li>
     </ul>
   </section>
 
@@ -1090,85 +1092,88 @@
 
   /* ジャンル別 CPA（顧客獲得単価）の目安。
      low / mid / high = 全販促費ベースの新規1人あたり獲得コスト（円）。
+     根拠は紙媒体（新聞折込・情報誌）の業種別反響率から逆算した値。
+     CPA = 掲載費 ÷（配布部数 × 反響率 × 成約率）
+     ケイクリエイト一宮版を配布部数5万部・掲載費75,000円/回（住宅枠は225,000円/回）として算出。
      preset = 費用対効果シミュレーション側の業界目安値。 */
   var GENRES = [
     {
       key: "gourmet", label: "グルメ（飲食店・カフェ）",
-      low: 800, mid: 1500, high: 3000,
-      basis: "客単価3,000〜4,000円の20〜40%が許容ライン",
-      preset: { unitPrice: 3500, normalNew: 20, repeatRate: 30, revisitInterval: 1, adNew: 30, adArea: "一宮", freq: 1 }
+      low: 500, mid: 1200, high: 3000,
+      basis: "折込の反響率0.05〜0.5%から逆算。客単価3,500円の20〜40%にも収まる水準",
+      preset: { unitPrice: 3500, normalNew: 30, repeatRate: 30, revisitInterval: 1, adNew: 45, adArea: "一宮", freq: 1 }
     },
     {
       key: "beauty", label: "ビューティー（美容室・ネイル・リラク）",
-      low: 1200, mid: 2500, high: 6000,
-      basis: "美容室は客単価6,000円で1,200〜1,800円（客単価の20〜30%）が目安",
-      preset: { unitPrice: 6000, normalNew: 8, repeatRate: 50, revisitInterval: 2, adNew: 12, adArea: "一宮", freq: 2 }
+      low: 400, mid: 1000, high: 2500,
+      basis: "美容室・サロンの反響率0.1〜0.5%から逆算。客単価の20〜30%以内にも収まる",
+      preset: { unitPrice: 6000, normalNew: 15, repeatRate: 50, revisitInterval: 2, adNew: 25, adArea: "一宮", freq: 2 }
     },
     {
       key: "esthe", label: "エステ・脱毛・痩身",
-      low: 5000, mid: 12000, high: 30000,
-      basis: "高単価コース前提。無料体験からの成約率で大きく変動",
+      low: 1200, mid: 4000, high: 12000,
+      basis: "サロンの反響率0.1〜0.5%、体験から契約への成約率30〜50%で逆算",
       preset: { unitPrice: 30000, normalNew: 3, repeatRate: 60, revisitInterval: 1, adNew: 8, adArea: "一宮", freq: 2, priceRange: { min: 0, max: 200000, step: 5000 } }
     },
     {
       key: "school", label: "スクール（教室・習い事・塾）",
-      low: 5000, mid: 13000, high: 30000,
-      basis: "教育業界のリスティング平均CPAは約13,180円",
-      preset: { unitPrice: 15000, normalNew: 3, repeatRate: 85, revisitInterval: 1, adNew: 4, adArea: "一宮", freq: 2 }
+      low: 1000, mid: 3000, high: 8000,
+      basis: "学習塾・習い事の反響率0.1〜1.0%、体験から入会への成約率40%で逆算",
+      preset: { unitPrice: 15000, normalNew: 5, repeatRate: 85, revisitInterval: 1, adNew: 8, adArea: "一宮", freq: 2 }
     },
     {
       key: "clinic", label: "医療・クリニック（歯科・整体・接骨院）",
-      low: 3000, mid: 9000, high: 20000,
-      basis: "健康と医療のリスティング平均CPAは約9,191円",
-      preset: { unitPrice: 6000, normalNew: 10, repeatRate: 50, revisitInterval: 1, adNew: 15, adArea: "一宮", freq: 1 }
+      low: 600, mid: 1800, high: 4500,
+      basis: "クリニック・歯科の反響率0.05〜0.3%から逆算。反響がそのまま来院になる前提",
+      preset: { unitPrice: 6000, normalNew: 20, repeatRate: 50, revisitInterval: 1, adNew: 30, adArea: "一宮", freq: 1 }
     },
     {
       key: "shop", label: "ショップ（物販店）",
-      low: 1500, mid: 3500, high: 7000,
-      basis: "Eコマース平均CPA 6,775円に対し、店頭集客はやや低め",
-      preset: { unitPrice: 4000, normalNew: 25, repeatRate: 30, revisitInterval: 3, adNew: 35, adArea: "一宮", freq: 1 }
+      low: 500, mid: 1200, high: 3000,
+      basis: "飲食と同水準の反響率0.05〜0.5%から逆算。来店がそのまま購入になる前提",
+      preset: { unitPrice: 4000, normalNew: 35, repeatRate: 30, revisitInterval: 3, adNew: 50, adArea: "一宮", freq: 1 }
     },
     {
       key: "housing", label: "住宅・リフォーム（工務店）",
-      low: 30000, mid: 60000, high: 150000,
-      basis: "問合せ1件あたりの単価。契約金額の3%前後が目安",
+      low: 25000, mid: 80000, high: 250000,
+      basis: "住宅枠225,000円/回・反響率0.01〜0.2%・反響から契約への成約率10%で逆算",
       bigTable: true,
-      preset: { unitPrice: 1000000, normalNew: 1, repeatRate: 1, revisitInterval: 12, adNew: 1, adArea: "一宮", freq: 1, priceRange: { min: 0, max: 2000000, step: 100000 } }
+      preset: { unitPrice: 1000000, normalNew: 1, repeatRate: 1, revisitInterval: 12, adNew: 2, adArea: "一宮", freq: 3, priceRange: { min: 0, max: 2000000, step: 100000 } }
     },
     {
       key: "realestate", label: "不動産（賃貸・売買仲介）",
-      low: 6000, mid: 12000, high: 30000,
-      basis: "不動産のリスティング平均CPAは約11,675円",
+      low: 6000, mid: 20000, high: 60000,
+      basis: "不動産の反響率0.01〜0.2%、反響から成約への成約率20%で逆算",
       preset: { unitPrice: 300000, normalNew: 3, repeatRate: 5, revisitInterval: 12, adNew: 4, adArea: "一宮", freq: 1, priceRange: { min: 0, max: 2000000, step: 50000 } }
     },
     {
       key: "car", label: "車・バイク（販売・整備・車検）",
-      low: 2000, mid: 4000, high: 10000,
-      basis: "自動車のリスティング平均CPAは約3,489円",
-      preset: { unitPrice: 50000, normalNew: 15, repeatRate: 60, revisitInterval: 12, adNew: 15, adArea: "一宮", freq: 1, priceRange: { min: 0, max: 300000, step: 5000 } }
+      low: 600, mid: 2000, high: 6000,
+      basis: "折込の主力業種。反響率0.05〜0.3%、車検・整備の予約前提で逆算",
+      preset: { unitPrice: 50000, normalNew: 20, repeatRate: 60, revisitInterval: 12, adNew: 30, adArea: "一宮", freq: 1, priceRange: { min: 0, max: 300000, step: 5000 } }
     },
     {
       key: "leisure", label: "レジャー・旅行・宿泊",
-      low: 3000, mid: 8800, high: 15000,
-      basis: "旅行関係のリスティング平均CPAは約8,775円",
+      low: 500, mid: 1500, high: 4000,
+      basis: "飲食と同水準の反響率から逆算。日帰りレジャー・温浴施設の利用を想定",
       preset: { unitPrice: 8000, normalNew: 30, repeatRate: 25, revisitInterval: 6, adNew: 40, adArea: "一宮", freq: 1 }
     },
     {
       key: "ceremony", label: "冠婚葬祭（式場・葬儀・仏事）",
-      low: 20000, mid: 50000, high: 150000,
-      basis: "検討期間が長く、1件あたりの獲得単価が高くなりやすい",
+      low: 10000, mid: 30000, high: 90000,
+      basis: "反響率0.01〜0.05%、相談から受注への成約率30%で逆算。検討期間が長い",
       preset: { unitPrice: 1500000, normalNew: 1, repeatRate: 1, revisitInterval: 12, adNew: 2, adArea: "一宮", freq: 1, priceRange: { min: 0, max: 3000000, step: 100000 } }
     },
     {
       key: "btob", label: "BtoB・士業・各種サービス",
-      low: 7000, mid: 15000, high: 30000,
-      basis: "BtoBのリスティング平均CPAは約15,036円",
-      preset: { unitPrice: 200000, normalNew: 2, repeatRate: 20, revisitInterval: 12, adNew: 3, adArea: "一宮", freq: 2, priceRange: { min: 0, max: 1000000, step: 20000 } }
+      low: 5000, mid: 15000, high: 45000,
+      basis: "反響率0.01〜0.1%、問合せから受注への成約率25%で逆算。紙媒体では反響が出にくい",
+      preset: { unitPrice: 200000, normalNew: 3, repeatRate: 20, revisitInterval: 12, adNew: 4, adArea: "一宮", freq: 2, priceRange: { min: 0, max: 1000000, step: 20000 } }
     },
     {
       key: "average", label: "全業種の平均（業種が決まっていないとき）",
-      low: 4000, mid: 7600, high: 15000,
-      basis: "リスティング広告の全業界平均CPAは約7,600円",
+      low: 800, mid: 2500, high: 8000,
+      basis: "上記12ジャンルの目安CPAの中央値。地域情報誌としての平均的な水準",
       preset: null
     }
   ];
