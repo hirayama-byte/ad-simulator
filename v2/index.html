@@ -937,18 +937,26 @@
 
       <div class="field">
         <div class="field-label-row">
-          <label for="adArea">広告エリア・掲載頻度</label>
-          <span class="hint">掲載するエリアと頻度を選択（広告費に目安値が自動反映されます）</span>
+          <label for="adArea">掲載する版（エリア）</label>
+          <span class="hint">くれよん6誌のうちどの版に出すか。一宮・稲沢版は20万部、他の版は各6万部です</span>
+        </div>
+        <select id="adArea">
+          <option value="一宮">一宮・稲沢版（20万部）</option>
+          <option value="江南">江南・大口・扶桑版（6万部）</option>
+          <option value="岩倉">岩倉・北名古屋版（6万部）</option>
+          <option value="清須">清須・あま版（6万部）</option>
+          <option value="津島">海部・津島版（6万部）</option>
+          <option value="西区">西区・北区版（6万部）</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <div class="field-label-row">
+          <label for="adSize">広告サイズ・掲載頻度</label>
+          <span class="hint">サイズと頻度を選ぶと、料金表の単価が広告費に自動反映されます</span>
         </div>
         <div class="field-input-row field-input-row-dual">
-          <select id="adArea" class="ad-area-select">
-            <option value="一宮">一宮</option>
-            <option value="江南">江南</option>
-            <option value="岩倉">岩倉</option>
-            <option value="清須">清須</option>
-            <option value="津島">津島</option>
-            <option value="西区">西区</option>
-          </select>
+          <select id="adSize" class="ad-area-select"></select>
           <select id="adFreq" class="ad-freq-select">
             <option value="1">毎月(年12回)</option>
             <option value="2">隔月(年6回)</option>
@@ -961,8 +969,8 @@
 
       <div class="field">
         <div class="field-label-row">
-          <label for="adCost">1回あたりの広告費（当社媒体）</label>
-          <span class="hint">掲載1回にかかる広告予算（自動反映後も編集可能）</span>
+          <label for="adCost">1回あたりの掲載料（当社媒体）</label>
+          <span class="hint">料金表の税別価格を自動反映します（編集可能）。フリー広告は別途制作費がかかります</span>
         </div>
         <input type="range" id="adCostRange" min="0" max="500000" step="5000" value="75000" />
         <div class="field-input-row">
@@ -1020,8 +1028,9 @@
 
   <section class="card assumptions" aria-label="この試算の考え方">
     <h2 class="section-title">この試算の考え方</h2>
-    <p><strong>CPA（顧客獲得単価）</strong>は「販促費 ÷ 獲得できた新規客数」で、新規1人を獲得するのにかかった費用です。STEP2のCPA相場は、<strong>紙媒体（新聞折込・地域情報誌）の業種別反響率から逆算</strong>した値です。計算式は <strong>CPA ＝ 掲載費 ÷（配布部数 × 反響率 × 成約率）</strong>。一宮版を配布部数5万部・掲載費75,000円/回（住宅枠は225,000円/回）として算出しています。</p>
-    <p>ネット広告（リスティング）の業界別平均CPAは紙媒体より高く出るため、そのままでは使えません。たとえば飲食店の折込は反響率0.05〜0.5%＝5万部で25〜250件の反響が見込めるので、CPAは300〜3,000円の水準になります。業種ごとに「反響がそのまま来店になるか（飲食・美容・クリニック）」「反響から成約までに絞り込みがあるか（塾・不動産・住宅）」を分けて成約率を掛けています。あわせて、業種ごとの「客単価に対して許容できる販促費の割合」（美容室なら客単価の20〜30%、住宅なら契約金額の3%前後）でも妥当性を確認しています。</p>
+    <p><strong>CPA（顧客獲得単価）</strong>は「販促費 ÷ 獲得できた新規客数」で、新規1人を獲得するのにかかった費用です。STEP2のCPA相場は、<strong>紙媒体（新聞折込・地域情報誌）の業種別反響率から逆算</strong>した値です。計算式は <strong>CPA ＝ 掲載費 ÷（配布部数 × 反響率 × 成約率）</strong>。くれよんは<strong>一宮・稲沢版が20万部、他の5版が各6万部（6誌計 約51万世帯）</strong>で、掲載料は媒体資料の料金表（税別）をサイズ・版・年間掲載回数から引いています。</p>
+    <p>ネット広告（リスティング）の業界別平均CPAは紙媒体より高く出るため、そのままでは使えません。また<strong>情報誌の1枠は、折込チラシ1枚より反響が出にくい</strong>のが実際です。そのため各ジャンルのCPAは、逆算すると反響率が <strong>0.004〜0.043%</strong> になる水準に置いています。これは折込チラシの業種別相場（飲食0.05〜0.5%／美容室0.1〜0.5%／クリニック0.05〜0.3%／学習塾0.1〜1.0%／不動産・リフォーム0.01〜0.2%）をいずれも下回る、控えめな見積もりです。業種ごとに「反響がそのまま来店になるか（飲食・美容・クリニック・車検）」「反響から契約までに絞り込みがあるか（塾・エステ・不動産・注文住宅・リフォーム）」を分けて成約率を掛けています。あわせて、業種ごとの「客単価に対して許容できる販促費の割合」（美容室なら客単価の20〜30%、住宅なら契約金額の3%前後）でも妥当性を確認しています。</p>
+    <p>おすすめの掲載サイズ・頻度はジャンルごとに初期値として入れてあります（例：<strong>注文住宅はフリー1P × 年12回</strong>、<strong>リフォームはフリー1/2P × 年12回</strong>）。サイズと版と頻度を変えると、料金表の単価が自動で入れ替わります。フリー広告には別途<strong>制作費</strong>（2P 50,000円／1P 30,000円／1/2P 20,000円／1/4P 15,000円・いずれも初回のみ）がかかり、定型広告は制作費なしです。金額はすべて税別で、シミュレーションにも制作費は含めていません。</p>
     <p>STEP3の<strong>「必要な販促費」は、チラシ・情報誌・Web・SNSなどすべての販促手段を合わせた全販促費</strong>の目安です。STEP5の費用対効果シミュレーションは、そのうち<strong>当社媒体に出稿した場合</strong>の売上・損益を計算しています。両者は範囲が違うため、STEP3では「必要販促費のうち当社媒体が占める割合」を並べて表示しています。</p>
     <p>広告経由の来店者数は、<strong>「広告を掲載した月に加わる新規集客数」＋「来店頻度のタイミングで発生するリピート来店数（新規集客数×リピート率）」</strong>として計算しています。リピート来店は広告を実施した回数を基準に発生し、2回目以降の掲載タイミングのうち「来店頻度」で選んだ間隔ごとにだけ計上されます（広告を打っていない月には発生しません）。</p>
     <p>売上・損益は、あくまで<strong>広告によって上乗せされた分</strong>のみを計算しています。「月の通常新規獲得数」は比較の目安としての参考値で、試算そのものには影響しません。</p>
@@ -1074,6 +1083,7 @@
     adNew: document.getElementById("adNew"),
     adNewRange: document.getElementById("adNewRange"),
     adArea: document.getElementById("adArea"),
+    adSize: document.getElementById("adSize"),
     adFreq: document.getElementById("adFreq"),
     adCost: document.getElementById("adCost"),
     adCostRange: document.getElementById("adCostRange"),
@@ -1092,88 +1102,93 @@
 
   /* ジャンル別 CPA（顧客獲得単価）の目安。
      low / mid / high = 全販促費ベースの新規1人あたり獲得コスト（円）。
-     根拠は紙媒体（新聞折込・情報誌）の業種別反響率から逆算した値。
+     根拠は紙媒体（新聞折込・地域情報誌）の業種別反響率から逆算した値。
      CPA = 掲載費 ÷（配布部数 × 反響率 × 成約率）
-     ケイクリエイト一宮版を配布部数5万部・掲載費75,000円/回（住宅枠は225,000円/回）として算出。
-     preset = 費用対効果シミュレーション側の業界目安値。 */
+     一宮・稲沢版は20万部、他5版は各6万部（6誌計 約51万世帯）。
+     preset.size / preset.freq = おすすめする当社媒体の広告サイズと掲載頻度。 */
   var GENRES = [
     {
       key: "gourmet", label: "グルメ（飲食店・カフェ）",
       low: 500, mid: 1200, high: 3000,
-      basis: "折込の反響率0.05〜0.5%から逆算。客単価3,500円の20〜40%にも収まる水準",
-      preset: { unitPrice: 3500, normalNew: 30, repeatRate: 30, revisitInterval: 1, adNew: 45, adArea: "一宮", freq: 1 }
+      basis: "一宮版20万部で1回62人の来店＝反響率0.031%。折込チラシ1枚の相場0.05〜0.5%より控えめな想定",
+      preset: { unitPrice: 3500, normalNew: 30, repeatRate: 30, revisitInterval: 1, adNew: 45, adArea: "一宮", size: "fmt1_4P", freq: 1 }
     },
     {
       key: "beauty", label: "ビューティー（美容室・ネイル・リラク）",
       low: 400, mid: 1000, high: 2500,
-      basis: "美容室・サロンの反響率0.1〜0.5%から逆算。客単価の20〜30%以内にも収まる",
-      preset: { unitPrice: 6000, normalNew: 15, repeatRate: 50, revisitInterval: 2, adNew: 25, adArea: "一宮", freq: 2 }
+      basis: "1回85人の来店＝反響率0.043%。美容室・サロンの折込相場0.1〜0.5%より控えめ。客単価の20〜30%以内にも収まる",
+      preset: { unitPrice: 6000, normalNew: 15, repeatRate: 50, revisitInterval: 2, adNew: 25, adArea: "一宮", size: "fmt1_4P", freq: 2 }
     },
     {
       key: "esthe", label: "エステ・脱毛・痩身",
       low: 1200, mid: 4000, high: 12000,
-      basis: "サロンの反響率0.1〜0.5%、体験から契約への成約率30〜50%で逆算",
-      preset: { unitPrice: 30000, normalNew: 3, repeatRate: 60, revisitInterval: 1, adNew: 8, adArea: "一宮", freq: 2, priceRange: { min: 0, max: 200000, step: 5000 } }
+      basis: "1回21人の契約＝反響53人・反響率0.027%。体験から契約への成約率40%で逆算",
+      preset: { unitPrice: 30000, normalNew: 3, repeatRate: 60, revisitInterval: 1, adNew: 8, adArea: "一宮", size: "fmt1_4P", freq: 2, priceRange: { min: 0, max: 200000, step: 5000 } }
     },
     {
       key: "school", label: "スクール（教室・習い事・塾）",
       low: 1000, mid: 3000, high: 8000,
-      basis: "学習塾・習い事の反響率0.1〜1.0%、体験から入会への成約率40%で逆算",
-      preset: { unitPrice: 15000, normalNew: 5, repeatRate: 85, revisitInterval: 1, adNew: 8, adArea: "一宮", freq: 2 }
+      basis: "1回28人の入会＝反響71人・反響率0.035%。体験から入会への成約率40%で逆算",
+      preset: { unitPrice: 15000, normalNew: 5, repeatRate: 85, revisitInterval: 1, adNew: 8, adArea: "一宮", size: "fmt1_4P", freq: 2 }
     },
     {
       key: "clinic", label: "医療・クリニック（歯科・整体・接骨院）",
       low: 600, mid: 1800, high: 4500,
-      basis: "クリニック・歯科の反響率0.05〜0.3%から逆算。反響がそのまま来院になる前提",
-      preset: { unitPrice: 6000, normalNew: 20, repeatRate: 50, revisitInterval: 1, adNew: 30, adArea: "一宮", freq: 1 }
+      basis: "1回42人の来院＝反響率0.021%。クリニック・歯科の折込相場0.05〜0.3%より控えめ",
+      preset: { unitPrice: 6000, normalNew: 20, repeatRate: 50, revisitInterval: 1, adNew: 30, adArea: "一宮", size: "fmt1_4P", freq: 1 }
     },
     {
       key: "shop", label: "ショップ（物販店）",
       low: 500, mid: 1200, high: 3000,
-      basis: "飲食と同水準の反響率0.05〜0.5%から逆算。来店がそのまま購入になる前提",
-      preset: { unitPrice: 4000, normalNew: 35, repeatRate: 30, revisitInterval: 3, adNew: 50, adArea: "一宮", freq: 1 }
+      basis: "1回62人の来店＝反響率0.031%。来店がそのまま購入になる前提",
+      preset: { unitPrice: 4000, normalNew: 35, repeatRate: 30, revisitInterval: 3, adNew: 50, adArea: "一宮", size: "fmt1_4P", freq: 1 }
     },
     {
-      key: "housing", label: "住宅・リフォーム（工務店）",
-      low: 25000, mid: 80000, high: 250000,
-      basis: "住宅枠225,000円/回・反響率0.01〜0.2%・反響から契約への成約率10%で逆算",
-      bigTable: true,
-      preset: { unitPrice: 1000000, normalNew: 1, repeatRate: 1, revisitInterval: 12, adNew: 2, adArea: "一宮", freq: 3, priceRange: { min: 0, max: 2000000, step: 100000 } }
+      key: "chumon", label: "注文住宅（新築・工務店・ハウスメーカー）",
+      low: 100000, mid: 300000, high: 600000,
+      basis: "フリー1P・年12回（225,000円/回）で1回0.75棟＝反響25件・反響率0.0125%。来場や資料請求から契約への成約率3%で逆算。契約金額3,000万円に対して1%で、業界目安の3%以内",
+      preset: { unitPrice: 30000000, normalNew: 1, repeatRate: 1, revisitInterval: 12, adNew: 1, adArea: "一宮", size: "free1P", freq: 1, priceRange: { min: 0, max: 100000000, step: 1000000 } }
+    },
+    {
+      key: "reform", label: "リフォーム（改装・水回り・外壁）",
+      low: 20000, mid: 70000, high: 200000,
+      basis: "フリー1/2P・年12回（156,000円/回）で1回2.2件＝反響22件・反響率0.011%。反響から契約への成約率10%で逆算。工事金額100万円に対して7%",
+      preset: { unitPrice: 1000000, normalNew: 1, repeatRate: 5, revisitInterval: 12, adNew: 3, adArea: "一宮", size: "free1_2P", freq: 1, priceRange: { min: 0, max: 5000000, step: 100000 } }
     },
     {
       key: "realestate", label: "不動産（賃貸・売買仲介）",
       low: 6000, mid: 20000, high: 60000,
-      basis: "不動産の反響率0.01〜0.2%、反響から成約への成約率20%で逆算",
-      preset: { unitPrice: 300000, normalNew: 3, repeatRate: 5, revisitInterval: 12, adNew: 4, adArea: "一宮", freq: 1, priceRange: { min: 0, max: 2000000, step: 50000 } }
+      basis: "1回3.8件の成約＝反響19件・反響率0.009%。不動産・リフォームの折込相場0.01〜0.2%の下限付近、成約率20%で逆算",
+      preset: { unitPrice: 300000, normalNew: 3, repeatRate: 5, revisitInterval: 12, adNew: 4, adArea: "一宮", size: "fmt1_4P", freq: 1, priceRange: { min: 0, max: 2000000, step: 50000 } }
     },
     {
       key: "car", label: "車・バイク（販売・整備・車検）",
       low: 600, mid: 2000, high: 6000,
-      basis: "折込の主力業種。反響率0.05〜0.3%、車検・整備の予約前提で逆算",
-      preset: { unitPrice: 50000, normalNew: 20, repeatRate: 60, revisitInterval: 12, adNew: 30, adArea: "一宮", freq: 1, priceRange: { min: 0, max: 300000, step: 5000 } }
+      basis: "1回37人の予約＝反響率0.019%。折込の主力業種で、車検・整備の予約がそのまま獲得になる前提",
+      preset: { unitPrice: 50000, normalNew: 20, repeatRate: 60, revisitInterval: 12, adNew: 30, adArea: "一宮", size: "fmt1_4P", freq: 1, priceRange: { min: 0, max: 300000, step: 5000 } }
     },
     {
       key: "leisure", label: "レジャー・旅行・宿泊",
       low: 500, mid: 1500, high: 4000,
-      basis: "飲食と同水準の反響率から逆算。日帰りレジャー・温浴施設の利用を想定",
-      preset: { unitPrice: 8000, normalNew: 30, repeatRate: 25, revisitInterval: 6, adNew: 40, adArea: "一宮", freq: 1 }
+      basis: "1回50人の利用＝反響率0.025%。日帰りレジャー・温浴施設の利用を想定",
+      preset: { unitPrice: 8000, normalNew: 30, repeatRate: 25, revisitInterval: 6, adNew: 40, adArea: "一宮", size: "fmt1_4P", freq: 1 }
     },
     {
       key: "ceremony", label: "冠婚葬祭（式場・葬儀・仏事）",
       low: 10000, mid: 30000, high: 90000,
-      basis: "反響率0.01〜0.05%、相談から受注への成約率30%で逆算。検討期間が長い",
-      preset: { unitPrice: 1500000, normalNew: 1, repeatRate: 1, revisitInterval: 12, adNew: 2, adArea: "一宮", freq: 1, priceRange: { min: 0, max: 3000000, step: 100000 } }
+      basis: "1回2.5件の受注＝反響8件・反響率0.004%。検討期間が長く、相談から受注への成約率30%で逆算",
+      preset: { unitPrice: 1500000, normalNew: 1, repeatRate: 1, revisitInterval: 12, adNew: 2, adArea: "一宮", size: "fmt1_4P", freq: 1, priceRange: { min: 0, max: 3000000, step: 100000 } }
     },
     {
       key: "btob", label: "BtoB・士業・各種サービス",
       low: 5000, mid: 15000, high: 45000,
-      basis: "反響率0.01〜0.1%、問合せから受注への成約率25%で逆算。紙媒体では反響が出にくい",
-      preset: { unitPrice: 200000, normalNew: 3, repeatRate: 20, revisitInterval: 12, adNew: 4, adArea: "一宮", freq: 2, priceRange: { min: 0, max: 1000000, step: 20000 } }
+      basis: "1回5.7件の受注＝反響23件・反響率0.011%。問合せから受注への成約率25%で逆算。紙媒体では反響が出にくい業種",
+      preset: { unitPrice: 200000, normalNew: 3, repeatRate: 20, revisitInterval: 12, adNew: 4, adArea: "一宮", size: "fmt1_4P", freq: 2, priceRange: { min: 0, max: 1000000, step: 20000 } }
     },
     {
       key: "average", label: "全業種の平均（業種が決まっていないとき）",
       low: 800, mid: 2500, high: 8000,
-      basis: "上記12ジャンルの目安CPAの中央値。地域情報誌としての平均的な水準",
+      basis: "上記13ジャンルの目安CPAの中央値。地域情報誌としての平均的な水準",
       preset: null
     }
   ];
@@ -1181,30 +1196,127 @@
   var DEFAULT_GENRE_KEY = "gourmet";
   var currentGenre = GENRES[0];
 
-  var AD_PRICE_TABLE = {
-    housing: {
+  /* 広告サイズ。ラベルは媒体資料「くれよん6誌 広告掲載料金」の表記に合わせる。
+     areas に含まれないエリアではそのサイズを選べない（媒体資料に価格がないため）。 */
+  var SIZES = [
+    { key: "free2P",   label: "フリー 2P（見開き）",   group: "フリー", seisaku: 50000 },
+    { key: "free1P",   label: "フリー 1P（1ページ）", group: "フリー", seisaku: 30000 },
+    { key: "free1_2P", label: "フリー 1/2P",          group: "フリー", seisaku: 20000 },
+    { key: "free1_4P", label: "フリー 1/4P",          group: "フリー", seisaku: 15000 },
+    { key: "fmt1_2P",  label: "定型 1/2P",            group: "定型",  seisaku: 0 },
+    { key: "fmt1_3P",  label: "定型 1/3P",            group: "定型",  seisaku: 0, areas: ["一宮"] },
+    { key: "fmt1_4P",  label: "定型 1/4P",            group: "定型",  seisaku: 0 },
+    { key: "fmt1_6P",  label: "定型 1/6P",            group: "定型",  seisaku: 0, areas: ["一宮", "江南", "清須", "津島", "西区"] },
+    { key: "fmt1_8P",  label: "定型 1/8P",            group: "定型",  seisaku: 0, areas: ["岩倉"] }
+  ];
+
+  /* 掲載料金（税別・1回あたり／円）。媒体資料「くれよん6誌 広告掲載料金」より転記。
+     頻度キー: "1"=年12回 / "2"=年6〜8回 / "3"=年4回 / "4"=年3回 / "0"=年1回 */
+  var PRICE = {
+    free2P: {
+      "一宮": { "1": 400000, "2": 450000, "3": 490000, "4": 510000, "0": 550000 },
+      "江南": { "1": 360000, "2": 380000, "3": 415000, "4": 430000, "0": 470000 },
+      "岩倉": { "1": 340000, "2": 352000, "3": 389000, "4": 408000, "0": 440000 },
+      "清須": { "1": 350000, "2": 362000, "3": 399000, "4": 418000, "0": 450000 },
+      "津島": { "1": 326000, "2": 355000, "3": 362000, "4": 378000, "0": 415000 },
+      "西区": { "1": 330000, "2": 360000, "3": 398000, "4": 415000, "0": 450000 }
+    },
+    free1P: {
       "一宮": { "1": 225000, "2": 260000, "3": 278000, "4": 288000, "0": 306000 },
       "江南": { "1": 180000, "2": 211000, "3": 230000, "4": 260000, "0": 290000 },
       "岩倉": { "1": 173000, "2": 185000, "3": 223000, "4": 256000, "0": 260000 },
       "清須": { "1": 174000, "2": 186000, "3": 224000, "4": 257000, "0": 261000 },
       "津島": { "1": 146000, "2": 175000, "3": 182000, "4": 198000, "0": 235000 },
-      "西区": { "1": 187000, "2": 204000, "3": 253000, "4": 275000, "0": 290000 }
+      "西区": { "1": 170000, "2": 185000, "3": 230000, "4": 250000, "0": 260000 }
     },
-    other: {
+    free1_2P: {
+      "一宮": { "1": 156000, "2": 172000, "3": 185000, "4": 195000, "0": 205000 },
+      "江南": { "1": 140000, "2": 151000, "3": 170000, "4": 180000, "0": 190000 },
+      "岩倉": { "1": 105000, "2": 122000, "3": 134000, "4": 154000, "0": 169000 },
+      "清須": { "1": 107000, "2": 125000, "3": 138000, "4": 158000, "0": 174000 },
+      "津島": { "1":  95000, "2": 110000, "3": 116000, "4": 132000, "0": 160000 },
+      "西区": { "1": 104000, "2": 124000, "3": 135000, "4": 156000, "0": 172000 }
+    },
+    free1_4P: {
+      "一宮": { "1": 88000, "2": 99000, "3": 108000, "4": 118000, "0": 128000 },
+      "江南": { "1": 71000, "2": 85000, "3":  93000, "4": 102000, "0": 120000 },
+      "岩倉": { "1": 58000, "2": 69000, "3":  75000, "4":  86000, "0":  92000 },
+      "清須": { "1": 59000, "2": 70000, "3":  76000, "4":  87000, "0":  93000 },
+      "津島": { "1": 53000, "2": 59000, "3":  63000, "4":  72000, "0":  86000 },
+      "西区": { "1": 58000, "2": 65000, "3":  75000, "4":  86000, "0":  92000 }
+    },
+    fmt1_2P: {
+      "一宮": { "1": 140000, "2": 154000, "3": 162000, "4": 170000, "0": 180000 },
+      "江南": { "1": 117000, "2": 140000, "3": 150000, "4": 160000, "0": 175000 },
+      "岩倉": { "1":  93000, "2": 104000, "3": 115000, "4": 137000, "0": 153000 },
+      "清須": { "1":  94000, "2": 105000, "3": 116000, "4": 138000, "0": 154000 },
+      "津島": { "1":  80000, "2":  92000, "3":  97000, "4": 113000, "0": 140000 },
+      "西区": { "1":  93000, "2": 105000, "3": 115000, "4": 137000, "0": 153000 }
+    },
+    fmt1_3P: {
+      "一宮": { "1": 100000, "2": 110000, "3": 115000, "4": 125000, "0": 135000 }
+    },
+    fmt1_4P: {
       "一宮": { "1": 75000, "2": 85000, "3": 92000, "4": 100000, "0": 110000 },
-      "江南": { "1": 60000, "2": 73000, "3": 79000, "4": 87000, "0": 102000 },
-      "岩倉": { "1": 47000, "2": 54000, "3": 60000, "4": 71000, "0": 77000 },
-      "清須": { "1": 48000, "2": 55000, "3": 61000, "4": 72000, "0": 78000 },
-      "津島": { "1": 42000, "2": 47000, "3": 50000, "4": 58000, "0": 72000 },
-      "西区": { "1": 52000, "2": 57000, "3": 60000, "4": 77000, "0": 84000 }
+      "江南": { "1": 60000, "2": 73000, "3": 79000, "4":  87000, "0": 102000 },
+      "岩倉": { "1": 47000, "2": 54000, "3": 60000, "4":  71000, "0":  77000 },
+      "清須": { "1": 48000, "2": 55000, "3": 61000, "4":  72000, "0":  78000 },
+      "津島": { "1": 42000, "2": 47000, "3": 50000, "4":  58000, "0":  72000 },
+      "西区": { "1": 48000, "2": 52000, "3": 60000, "4":  71000, "0":  77000 }
+    },
+    fmt1_6P: {
+      "一宮": { "1": 57000, "2": 62000, "3": 66000, "4": 72000, "0": 80000 },
+      "江南": { "1": 42000, "2": 50000, "3": 54000, "4": 60000, "0": 69000 },
+      "清須": { "1": 36000, "2": 42000, "3": 46000, "4": 55000, "0": 64000 },
+      "津島": { "1": 30000, "2": 35000, "3": 38000, "4": 43000, "0": 54000 },
+      "西区": { "1": 35000, "2": 41000, "3": 45000, "4": 54000, "0": 63000 }
+    },
+    fmt1_8P: {
+      "岩倉": { "1": 35000, "2": 40000, "3": 46000, "4": 52000, "0": 59000 }
     }
   };
 
+  function findSize(key) {
+    for (var i = 0; i < SIZES.length; i++) {
+      if (SIZES[i].key === key) return SIZES[i];
+    }
+    return null;
+  }
+
+  function sizeAvailable(size, area) {
+    if (size.areas && size.areas.indexOf(area) < 0) return false;
+    return !!(PRICE[size.key] && PRICE[size.key][area]);
+  }
+
+  /* エリアを変えると選べるサイズが変わる（媒体資料に価格がある組み合わせだけ出す）。
+     いま選んでいるサイズが使えなくなったら定型1/4Pに戻す。 */
+  function rebuildSizeOptions() {
+    var area = els.adArea.value;
+    var want = els.adSize.value;
+    els.adSize.innerHTML = "";
+    var lastGroup = null, optgroup = null, stillThere = false;
+    SIZES.forEach(function (s) {
+      if (!sizeAvailable(s, area)) return;
+      if (s.group !== lastGroup) {
+        optgroup = document.createElement("optgroup");
+        optgroup.label = s.group;
+        els.adSize.appendChild(optgroup);
+        lastGroup = s.group;
+      }
+      var o = document.createElement("option");
+      o.value = s.key;
+      o.textContent = s.label;
+      optgroup.appendChild(o);
+      if (s.key === want) stillThere = true;
+    });
+    els.adSize.value = stillThere ? want : "fmt1_4P";
+  }
+
   function updateAdCostFromTable() {
-    var tableKey = (currentGenre && currentGenre.bigTable) ? "housing" : "other";
+    var sizeKey = els.adSize.value;
     var area = els.adArea.value;
     var freqKey = els.adFreq.value;
-    var table = AD_PRICE_TABLE[tableKey][area];
+    var table = PRICE[sizeKey] && PRICE[sizeKey][area];
     if (!table) return;
     var price = table[freqKey];
     if (price === undefined) return;
@@ -1335,6 +1447,8 @@
     els.adNew.value = p.adNew;
 
     els.adArea.value = p.adArea;
+    rebuildSizeOptions();
+    if (p.size) els.adSize.value = p.size;
     els.adFreq.value = String(p.freq);
   }
 
@@ -1395,6 +1509,11 @@
     render();
   });
   els.adArea.addEventListener("change", function () {
+    rebuildSizeOptions();
+    updateAdCostFromTable();
+    render();
+  });
+  els.adSize.addEventListener("change", function () {
     updateAdCostFromTable();
     render();
   });
@@ -1490,13 +1609,20 @@
       "通常の新規獲得数 <strong>" + normalNew + "人</strong> に対して、広告で <strong>+" + adNew + "人（+" + pct + "%）</strong> の上乗せを見込む試算です。";
   }
 
+  function seisakuNote() {
+    var sz = findSize(els.adSize.value);
+    if (!sz) return "";
+    if (!sz.seisaku) return "<br>" + sz.label + " は<strong>制作費なし</strong>（フォーマットに流し込むため）。表示はすべて税別です。";
+    return "<br>" + sz.label + " は別途<strong>制作費 " + yen(sz.seisaku) + "（初回のみ）</strong>がかかります。表示はすべて税別です。";
+  }
+
   function renderAdCostNote(adCost, freq) {
     if (freq === 0) {
-      els.adCostNote.innerHTML = "<strong>単発</strong>の広告費として、初月のみ計上します。";
+      els.adCostNote.innerHTML = "<strong>単発</strong>の広告費として、初月のみ計上します。" + seisakuNote();
       return;
     }
     var monthlyAvg = adCost / (freq > 0 ? freq : 1);
-    els.adCostNote.innerHTML = "月平均では <strong>" + yen(monthlyAvg) + "</strong> 相当の広告費です（掲載しない月は広告費0円として計算）。";
+    els.adCostNote.innerHTML = "月平均では <strong>" + yen(monthlyAvg) + "</strong> 相当の掲載料です（掲載しない月は0円として計算）。" + seisakuNote();
   }
 
   function renderTable(rows, breakevenMonth) {
@@ -1842,6 +1968,7 @@
     renderChart(rows12);
   }
 
+  rebuildSizeOptions();
   applyCpaRange(currentGenre);
   setCpa(currentGenre.mid);
   applyPreset(currentGenre.preset);
