@@ -830,9 +830,9 @@
           <label for="cpa">CPA（新規1人あたりの販促費）</label>
           <span class="hint">相場を自動入力します。自社の実績値があれば書き換えてください</span>
         </div>
-        <input type="range" id="cpaRange" min="0" max="5000" step="100" value="1200" />
+        <input type="range" id="cpaRange" min="0" max="5000" step="100" value="2000" />
         <div class="field-input-row">
-          <input type="text" id="cpa" value="1,200" inputmode="numeric" />
+          <input type="text" id="cpa" value="2,000" inputmode="numeric" />
           <span class="field-suffix">円 / 人</span>
         </div>
         <p class="note-line" id="cpaNote"></p>
@@ -1028,8 +1028,8 @@
 
   <section class="card assumptions" aria-label="この試算の考え方">
     <h2 class="section-title">この試算の考え方</h2>
-    <p><strong>CPA（顧客獲得単価）</strong>は「販促費 ÷ 獲得できた新規客数」で、新規1人を獲得するのにかかった費用です。STEP2のCPA相場は、<strong>紙媒体（新聞折込・地域情報誌）の業種別反響率から逆算</strong>した値です。計算式は <strong>CPA ＝ 掲載費 ÷（配布部数 × 反響率 × 成約率）</strong>。くれよんは<strong>一宮・稲沢版が20万部、他の5版が各6万部（6誌計 約51万世帯）</strong>で、掲載料は媒体資料の料金表（税別）をサイズ・版・年間掲載回数から引いています。</p>
-    <p>ネット広告（リスティング）の業界別平均CPAは紙媒体より高く出るため、そのままでは使えません。また<strong>情報誌の1枠は、折込チラシ1枚より反響が出にくい</strong>のが実際です。そのため各ジャンルのCPAは、逆算すると反響率が <strong>0.004〜0.043%</strong> になる水準に置いています。これは折込チラシの業種別相場（飲食0.05〜0.5%／美容室0.1〜0.5%／クリニック0.05〜0.3%／学習塾0.1〜1.0%／不動産・リフォーム0.01〜0.2%）をいずれも下回る、控えめな見積もりです。業種ごとに「反響がそのまま来店になるか（飲食・美容・クリニック・車検）」「反響から契約までに絞り込みがあるか（塾・エステ・不動産・注文住宅・リフォーム）」を分けて成約率を掛けています。あわせて、業種ごとの「客単価に対して許容できる販促費の割合」（美容室なら客単価の20〜30%、住宅なら契約金額の3%前後）でも妥当性を確認しています。</p>
+    <p><strong>CPA（顧客獲得単価）</strong>は「販促費 ÷ 獲得できた新規客数」で、新規1人を獲得するのにかかった費用です。STEP2のCPA相場は、<strong>一宮クラスの地方都市における業種別の実勢CPAと月間販促費の相場</strong>を一次根拠にした値です。二次チェックとして <strong>CPA ＝ 掲載費 ÷（配布部数 × 反響率 × 成約率）</strong> でも成立する水準かを確認しています。くれよんは<strong>一宮・稲沢版が20万部、他の5版が各6万部（6誌計 約51万世帯）</strong>で、掲載料は媒体資料の料金表（税別）をサイズ・版・年間掲載回数から引いています。</p>
+    <p>ネット広告（リスティング）の業界別平均CPAは紙媒体より高く出るため、そのままでは使えません。たとえば美容室はホットペッパービューティーの掲載料が地方の最下位プランでも月2.5万円〜、上位プランでは月数十万円かかり、これに予約経由売上の2%手数料とポイント負担が乗ります。<strong>月間の総販促費は10〜20万円が実態</strong>で、新規1人あたりのCPAは3,000〜6,000円。この水準を各ジャンルに当てはめています。あわせて<strong>情報誌の1枠は折込チラシ1枚より反響が出にくい</strong>ため、逆算すると反響率が <strong>0.001〜0.019%</strong> になる水準かも確認しています。これは折込チラシの業種別相場（飲食0.05〜0.5%／美容室0.1〜0.5%／クリニック0.05〜0.3%／学習塾0.1〜1.0%／不動産・リフォーム0.01〜0.2%）をいずれも下回る、控えめな見積もりです。業種ごとに「反響がそのまま来店になるか（飲食・美容・クリニック・車検）」「反響から契約までに絞り込みがあるか（塾・エステ・不動産・注文住宅・リフォーム）」を分けて成約率を掛けています。あわせて、業種ごとの「客単価に対して許容できる販促費の割合」（美容室なら客単価の20〜30%、住宅なら契約金額の3%前後）でも妥当性を確認しています。</p>
     <p>おすすめの掲載サイズ・頻度はジャンルごとに初期値として入れてあります（例：<strong>注文住宅はフリー1P × 年12回</strong>、<strong>リフォームはフリー1/2P × 年12回</strong>）。サイズと版と頻度を変えると、料金表の単価が自動で入れ替わります。フリー広告には別途<strong>制作費</strong>（2P 50,000円／1P 30,000円／1/2P 20,000円／1/4P 15,000円・いずれも初回のみ）がかかり、定型広告は制作費なしです。金額はすべて税別で、シミュレーションにも制作費は含めていません。</p>
     <p>STEP3の<strong>「必要な販促費」は、チラシ・情報誌・Web・SNSなどすべての販促手段を合わせた全販促費</strong>の目安です。STEP5の費用対効果シミュレーションは、そのうち<strong>当社媒体に出稿した場合</strong>の売上・損益を計算しています。両者は範囲が違うため、STEP3では「必要販促費のうち当社媒体が占める割合」を並べて表示しています。</p>
     <p>広告経由の来店者数は、<strong>「広告を掲載した月に加わる新規集客数」＋「来店頻度のタイミングで発生するリピート来店数（新規集客数×リピート率）」</strong>として計算しています。リピート来店は広告を実施した回数を基準に発生し、2回目以降の掲載タイミングのうち「来店頻度」で選んだ間隔ごとにだけ計上されます（広告を打っていない月には発生しません）。</p>
@@ -1102,93 +1102,95 @@
 
   /* ジャンル別 CPA（顧客獲得単価）の目安。
      low / mid / high = 全販促費ベースの新規1人あたり獲得コスト（円）。
-     根拠は紙媒体（新聞折込・地域情報誌）の業種別反響率から逆算した値。
-     CPA = 掲載費 ÷（配布部数 × 反響率 × 成約率）
+     一次根拠は「一宮クラスの地方都市における業種別の実勢CPAと月間販促費の相場」。
+     二次チェックとして、紙媒体（新聞折込・地域情報誌）の反響率から逆算しても
+     成立する水準かを確認している（逆算反響率は 0.0011〜0.019% で、折込チラシ1枚の
+     業種別相場をいずれも下回る控えめな想定）。
      一宮・稲沢版は20万部、他5版は各6万部（6誌計 約51万世帯）。
      preset.size / preset.freq = おすすめする当社媒体の広告サイズと掲載頻度。 */
   var GENRES = [
     {
       key: "gourmet", label: "グルメ（飲食店・カフェ）",
-      low: 500, mid: 1200, high: 3000,
-      basis: "一宮版20万部で1回62人の来店＝反響率0.031%。折込チラシ1枚の相場0.05〜0.5%より控えめな想定",
+      low: 1000, mid: 2000, high: 3000,
+      basis: "地方都市の実勢CPAは1,000〜3,000円、月間販促費の相場は5〜15万円。目標45人×2,000円＝月9万円で相場内。当社媒体1回37.5人＝反響率0.019%の想定",
       preset: { unitPrice: 3500, normalNew: 30, repeatRate: 30, revisitInterval: 1, adNew: 45, adArea: "一宮", size: "fmt1_4P", freq: 1 }
     },
     {
       key: "beauty", label: "ビューティー（美容室・ネイル・リラク）",
-      low: 400, mid: 1000, high: 2500,
-      basis: "1回85人の来店＝反響率0.043%。美容室・サロンの折込相場0.1〜0.5%より控えめ。客単価の20〜30%以内にも収まる",
-      preset: { unitPrice: 6000, normalNew: 15, repeatRate: 50, revisitInterval: 2, adNew: 25, adArea: "一宮", size: "fmt1_4P", freq: 2 }
+      low: 3000, mid: 4500, high: 6000,
+      basis: "地方都市の実勢CPAは3,000〜6,000円、月間販促費の相場は10〜20万円。ホットペッパービューティーは最下位プランでも月2.5万円〜なので、この水準が実態。当社媒体1回16.7人＝反響率0.008%の想定",
+      preset: { unitPrice: 6000, normalNew: 20, repeatRate: 50, revisitInterval: 2, adNew: 30, adArea: "一宮", size: "fmt1_4P", freq: 1 }
     },
     {
       key: "esthe", label: "エステ・脱毛・痩身",
-      low: 1200, mid: 4000, high: 12000,
-      basis: "1回21人の契約＝反響53人・反響率0.027%。体験から契約への成約率40%で逆算",
-      preset: { unitPrice: 30000, normalNew: 3, repeatRate: 60, revisitInterval: 1, adNew: 8, adArea: "一宮", size: "fmt1_4P", freq: 2, priceRange: { min: 0, max: 200000, step: 5000 } }
+      low: 4000, mid: 8000, high: 12000,
+      basis: "地方都市の実勢CPAは4,000〜12,000円、月間販促費の相場は10〜25万円。コース契約前提でLTVから逆算できるため、来店型より高いCPAが許容される",
+      preset: { unitPrice: 30000, normalNew: 10, repeatRate: 60, revisitInterval: 1, adNew: 15, adArea: "一宮", size: "fmt1_4P", freq: 1, priceRange: { min: 0, max: 200000, step: 5000 } }
     },
     {
       key: "school", label: "スクール（教室・習い事・塾）",
-      low: 1000, mid: 3000, high: 8000,
-      basis: "1回28人の入会＝反響71人・反響率0.035%。体験から入会への成約率40%で逆算",
-      preset: { unitPrice: 15000, normalNew: 5, repeatRate: 85, revisitInterval: 1, adNew: 8, adArea: "一宮", size: "fmt1_4P", freq: 2 }
+      low: 8000, mid: 14000, high: 20000,
+      basis: "地方都市の実勢CPAは8,000〜20,000円、月間販促費の相場は10〜20万円。客単価は入会金＋教材費＋初月月謝の初回売上で見ている。数ヶ月〜数年の継続が前提なのでLTVから逆算できる",
+      preset: { unitPrice: 45000, normalNew: 7, repeatRate: 85, revisitInterval: 1, adNew: 10, adArea: "一宮", size: "fmt1_4P", freq: 1 }
     },
     {
       key: "clinic", label: "医療・クリニック（歯科・整体・接骨院）",
-      low: 600, mid: 1800, high: 4500,
-      basis: "1回42人の来院＝反響率0.021%。クリニック・歯科の折込相場0.05〜0.3%より控えめ",
-      preset: { unitPrice: 6000, normalNew: 20, repeatRate: 50, revisitInterval: 1, adNew: 30, adArea: "一宮", size: "fmt1_4P", freq: 1 }
+      low: 5000, mid: 8000, high: 12000,
+      basis: "地方都市の実勢CPAは5,000〜12,000円、月間販促費の相場は15〜30万円。客単価は初診＋検査＋処置の初回売上（自由診療を含む平均）で見ている",
+      preset: { unitPrice: 12000, normalNew: 18, repeatRate: 50, revisitInterval: 1, adNew: 25, adArea: "一宮", size: "fmt1_2P", freq: 1 }
     },
     {
       key: "shop", label: "ショップ（物販店）",
-      low: 500, mid: 1200, high: 3000,
-      basis: "1回62人の来店＝反響率0.031%。来店がそのまま購入になる前提",
-      preset: { unitPrice: 4000, normalNew: 35, repeatRate: 30, revisitInterval: 3, adNew: 50, adArea: "一宮", size: "fmt1_4P", freq: 1 }
+      low: 2000, mid: 3500, high: 5000,
+      basis: "地方都市の実勢CPAは2,000〜5,000円、月間販促費の相場は5〜15万円。客単価は初回購入額（雑貨からアパレルまでの中間）で見ている",
+      preset: { unitPrice: 6000, normalNew: 25, repeatRate: 30, revisitInterval: 3, adNew: 35, adArea: "一宮", size: "fmt1_4P", freq: 1 }
     },
     {
       key: "chumon", label: "注文住宅（新築・工務店・ハウスメーカー）",
-      low: 100000, mid: 300000, high: 600000,
-      basis: "フリー1P・年12回（225,000円/回）で1回0.75棟＝反響25件・反響率0.0125%。来場や資料請求から契約への成約率3%で逆算。契約金額3,000万円に対して1%で、業界目安の3%以内",
-      preset: { unitPrice: 30000000, normalNew: 1, repeatRate: 1, revisitInterval: 12, adNew: 1, adArea: "一宮", size: "free1P", freq: 1, priceRange: { min: 0, max: 100000000, step: 1000000 } }
+      low: 50000, mid: 100000, high: 150000,
+      basis: "地方都市の実勢CPA（契約1棟あたり）は50,000〜150,000円、月間販促費の相場は30〜100万円。契約金額3,000万円に対して0.3%で、業界目安「契約金額の3%」に対してかなり堅めの設定",
+      preset: { unitPrice: 30000000, normalNew: 2, repeatRate: 1, revisitInterval: 12, adNew: 3, adArea: "一宮", size: "free1P", freq: 1, priceRange: { min: 0, max: 100000000, step: 1000000 } }
     },
     {
       key: "reform", label: "リフォーム（改装・水回り・外壁）",
-      low: 20000, mid: 70000, high: 200000,
-      basis: "フリー1/2P・年12回（156,000円/回）で1回2.2件＝反響22件・反響率0.011%。反響から契約への成約率10%で逆算。工事金額100万円に対して7%",
-      preset: { unitPrice: 1000000, normalNew: 1, repeatRate: 5, revisitInterval: 12, adNew: 3, adArea: "一宮", size: "free1_2P", freq: 1, priceRange: { min: 0, max: 5000000, step: 100000 } }
+      low: 30000, mid: 50000, high: 80000,
+      basis: "地方都市の実勢CPA（問合せ・反響1件あたり）は30,000〜80,000円、月間販促費の相場は20〜50万円。リピートは少ないが1件あたりの粗利が大きいため、この水準でも利益が残る",
+      preset: { unitPrice: 1000000, normalNew: 3, repeatRate: 5, revisitInterval: 12, adNew: 4, adArea: "一宮", size: "free1_2P", freq: 1, priceRange: { min: 0, max: 5000000, step: 100000 } }
     },
     {
       key: "realestate", label: "不動産（賃貸・売買仲介）",
-      low: 6000, mid: 20000, high: 60000,
-      basis: "1回3.8件の成約＝反響19件・反響率0.009%。不動産・リフォームの折込相場0.01〜0.2%の下限付近、成約率20%で逆算",
-      preset: { unitPrice: 300000, normalNew: 3, repeatRate: 5, revisitInterval: 12, adNew: 4, adArea: "一宮", size: "fmt1_4P", freq: 1, priceRange: { min: 0, max: 2000000, step: 50000 } }
+      low: 30000, mid: 50000, high: 80000,
+      basis: "地方都市の実勢CPAは30,000〜80,000円、月間販促費の相場は20〜60万円。資料請求や内見の段階で数万円のCPAを設定しても、仲介手数料で回収できる",
+      preset: { unitPrice: 300000, normalNew: 5, repeatRate: 5, revisitInterval: 12, adNew: 8, adArea: "一宮", size: "free1P", freq: 1, priceRange: { min: 0, max: 2000000, step: 50000 } }
     },
     {
       key: "car", label: "車・バイク（販売・整備・車検）",
-      low: 600, mid: 2000, high: 6000,
-      basis: "1回37人の予約＝反響率0.019%。折込の主力業種で、車検・整備の予約がそのまま獲得になる前提",
-      preset: { unitPrice: 50000, normalNew: 20, repeatRate: 60, revisitInterval: 12, adNew: 30, adArea: "一宮", size: "fmt1_4P", freq: 1, priceRange: { min: 0, max: 300000, step: 5000 } }
+      low: 10000, mid: 17000, high: 25000,
+      basis: "地方都市の実勢CPAは10,000〜25,000円、月間販促費の相場は15〜30万円。車検・整備で毎年戻ってくる前提なので、LTVから逆算して1〜2万円台のCPAが成立する",
+      preset: { unitPrice: 50000, normalNew: 8, repeatRate: 60, revisitInterval: 12, adNew: 12, adArea: "一宮", size: "fmt1_2P", freq: 1, priceRange: { min: 0, max: 300000, step: 5000 } }
     },
     {
       key: "leisure", label: "レジャー・旅行・宿泊",
-      low: 500, mid: 1500, high: 4000,
-      basis: "1回50人の利用＝反響率0.025%。日帰りレジャー・温浴施設の利用を想定",
-      preset: { unitPrice: 8000, normalNew: 30, repeatRate: 25, revisitInterval: 6, adNew: 40, adArea: "一宮", size: "fmt1_4P", freq: 1 }
+      low: 3000, mid: 5000, high: 8000,
+      basis: "地方都市の実勢CPAは3,000〜8,000円、月間販促費の相場は10〜25万円。日帰りレジャー・温浴施設の利用を想定",
+      preset: { unitPrice: 8000, normalNew: 25, repeatRate: 25, revisitInterval: 6, adNew: 35, adArea: "一宮", size: "fmt1_4P", freq: 1 }
     },
     {
       key: "ceremony", label: "冠婚葬祭（式場・葬儀・仏事）",
-      low: 10000, mid: 30000, high: 90000,
-      basis: "1回2.5件の受注＝反響8件・反響率0.004%。検討期間が長く、相談から受注への成約率30%で逆算",
-      preset: { unitPrice: 1500000, normalNew: 1, repeatRate: 1, revisitInterval: 12, adNew: 2, adArea: "一宮", size: "fmt1_4P", freq: 1, priceRange: { min: 0, max: 3000000, step: 100000 } }
+      low: 30000, mid: 50000, high: 70000,
+      basis: "地方都市の実勢CPAは30,000〜70,000円、月間販促費の相場は20〜50万円。検討期間が長く、相談・見学の段階で数万円のCPAを投じても1件の粗利で回収できる",
+      preset: { unitPrice: 1500000, normalNew: 4, repeatRate: 1, revisitInterval: 12, adNew: 6, adArea: "一宮", size: "free1_2P", freq: 1, priceRange: { min: 0, max: 3000000, step: 100000 } }
     },
     {
       key: "btob", label: "BtoB・士業・各種サービス",
-      low: 5000, mid: 15000, high: 45000,
-      basis: "1回5.7件の受注＝反響23件・反響率0.011%。問合せから受注への成約率25%で逆算。紙媒体では反響が出にくい業種",
-      preset: { unitPrice: 200000, normalNew: 3, repeatRate: 20, revisitInterval: 12, adNew: 4, adArea: "一宮", size: "fmt1_4P", freq: 2, priceRange: { min: 0, max: 1000000, step: 20000 } }
+      low: 20000, mid: 35000, high: 50000,
+      basis: "地方都市の実勢CPAは20,000〜50,000円、月間販促費の相場は15〜40万円。問合せ1件あたりの単価。紙媒体では反響が出にくい業種",
+      preset: { unitPrice: 200000, normalNew: 5, repeatRate: 20, revisitInterval: 12, adNew: 8, adArea: "一宮", size: "fmt1_2P", freq: 1, priceRange: { min: 0, max: 1000000, step: 20000 } }
     },
     {
       key: "average", label: "全業種の平均（業種が決まっていないとき）",
-      low: 800, mid: 2500, high: 8000,
-      basis: "上記13ジャンルの目安CPAの中央値。地域情報誌としての平均的な水準",
+      low: 3000, mid: 8000, high: 20000,
+      basis: "13ジャンルの実勢CPAの幅を踏まえた中間帯。業種が決まったら必ず選び直してください",
       preset: null
     }
   ];
