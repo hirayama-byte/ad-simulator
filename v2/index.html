@@ -790,7 +790,7 @@
         <input type="range" id="adNewRange" min="0" max="1000" step="1" value="45" />
         <div class="field-input-row">
           <input type="number" id="adNew" value="45" min="0" step="1" inputmode="numeric" />
-          <span class="field-suffix">人 / 月</span>
+          <span class="field-suffix" id="adNewUnit">人 / 月</span>
         </div>
         <p class="note-line" id="targetYearNote"></p>
       </div>
@@ -911,7 +911,7 @@
         <input type="range" id="normalNewRange" min="0" max="1000" step="1" value="30" aria-hidden="true" tabindex="-1" />
         <div class="field-input-row">
           <input type="number" id="normalNew" value="30" min="0" step="1" inputmode="numeric" />
-          <span class="field-suffix">人 / 月</span>
+          <span class="field-suffix" id="normalNewUnit">人 / 月</span>
         </div>
         <p class="note-line" id="adNewNote"></p>
       </div>
@@ -969,7 +969,7 @@
 
       <div class="field">
         <div class="field-label-row">
-          <label for="adCost">1回あたりの掲載料（当社媒体）</label>
+          <label for="adCost">1回あたりの掲載料（情報誌）</label>
           <span class="hint">料金表の税別価格を自動反映します（編集可能）。フリー広告は別途制作費がかかります</span>
         </div>
         <input type="range" id="adCostRange" min="0" max="500000" step="5000" value="75000" />
@@ -987,7 +987,7 @@
       <span class="step-num is-quiet">5</span>
       <h2 class="step-title">費用対効果シミュレーション</h2>
     </div>
-    <p class="step-lead">当社媒体に出稿した場合の、12ヶ月間の累計売上・累計広告費・投資回収を試算します。</p>
+    <p class="step-lead">情報誌に出稿した場合の、12ヶ月間の累計売上・累計広告費・投資回収を試算します。</p>
 
     <div class="stat-grid">
       <div class="stat-tile is-primary">
@@ -1031,7 +1031,7 @@
     <p><strong>CPA（顧客獲得単価）</strong>は「販促費 ÷ 獲得できた新規客数」で、新規1人を獲得するのにかかった費用です。STEP2のCPA相場は、<strong>一宮クラスの地方都市における業種別の実勢CPAと月間販促費の相場</strong>を一次根拠にした値です。二次チェックとして <strong>CPA ＝ 掲載費 ÷（配布部数 × 反響率 × 成約率）</strong> でも成立する水準かを確認しています。くれよんは<strong>一宮・稲沢版が20万部、他の5版が各6万部（6誌計 約51万世帯）</strong>で、掲載料は媒体資料の料金表（税別）をサイズ・版・年間掲載回数から引いています。</p>
     <p>ネット広告（リスティング）の業界別平均CPAは紙媒体より高く出るため、そのままでは使えません。たとえば美容室はホットペッパービューティーの掲載料が地方の最下位プランでも月2.5万円〜、上位プランでは月数十万円かかり、これに予約経由売上の2%手数料とポイント負担が乗ります。<strong>月間の総販促費は10〜20万円が実態</strong>で、新規1人あたりのCPAは3,000〜6,000円。この水準を各ジャンルに当てはめています。あわせて<strong>情報誌の1枠は折込チラシ1枚より反響が出にくい</strong>ため、逆算すると反響率が <strong>0.001〜0.019%</strong> になる水準かも確認しています。これは折込チラシの業種別相場（飲食0.05〜0.5%／美容室0.1〜0.5%／クリニック0.05〜0.3%／学習塾0.1〜1.0%／不動産・リフォーム0.01〜0.2%）をいずれも下回る、控えめな見積もりです。業種ごとに「反響がそのまま来店になるか（飲食・美容・クリニック・車検）」「反響から契約までに絞り込みがあるか（塾・エステ・不動産・注文住宅・リフォーム）」を分けて成約率を掛けています。あわせて、業種ごとの「客単価に対して許容できる販促費の割合」（美容室なら客単価の20〜30%、住宅なら契約金額の3%前後）でも妥当性を確認しています。</p>
     <p>おすすめの掲載サイズ・頻度はジャンルごとに初期値として入れてあります（例：<strong>注文住宅はフリー1P × 年12回</strong>、<strong>リフォームはフリー1/2P × 年12回</strong>）。サイズと版と頻度を変えると、料金表の単価が自動で入れ替わります。フリー広告には別途<strong>制作費</strong>（2P 50,000円／1P 30,000円／1/2P 20,000円／1/4P 15,000円・いずれも初回のみ）がかかり、定型広告は制作費なしです。金額はすべて税別で、シミュレーションにも制作費は含めていません。</p>
-    <p>STEP3の<strong>「必要な販促費」は、チラシ・情報誌・Web・SNSなどすべての販促手段を合わせた全販促費</strong>の目安です。STEP5の費用対効果シミュレーションは、そのうち<strong>当社媒体に出稿した場合</strong>の売上・損益を計算しています。両者は範囲が違うため、STEP3では「必要販促費のうち当社媒体が占める割合」を並べて表示しています。</p>
+    <p>STEP3の<strong>「必要な販促費」は、チラシ・Web・SNS・ポータルサイトなど情報誌以外も含めた、すべての販促手段を合わせた全販促費</strong>の目安です。STEP5の費用対効果シミュレーションは、そのうち<strong>情報誌に出稿した場合</strong>の売上・損益を計算しています。両者は範囲が違うため、STEP3では「必要販促費のうち情報誌が占める割合」を並べて表示しています。</p>
     <p>広告経由の来店者数は、<strong>「広告を掲載した月に加わる新規集客数」＋「来店頻度のタイミングで発生するリピート来店数（新規集客数×リピート率）」</strong>として計算しています。リピート来店は広告を実施した回数を基準に発生し、2回目以降の掲載タイミングのうち「来店頻度」で選んだ間隔ごとにだけ計上されます（広告を打っていない月には発生しません）。</p>
     <p>売上・損益は、あくまで<strong>広告によって上乗せされた分</strong>のみを計算しています。「月の通常新規獲得数」は比較の目安としての参考値で、試算そのものには影響しません。</p>
     <p>CPAも反響も、季節・競合・原稿内容・立地など様々な要因で変動します。この試算は打ち合わせ時の目安としてご活用ください。</p>
@@ -1084,6 +1084,8 @@
     adNewRange: document.getElementById("adNewRange"),
     adArea: document.getElementById("adArea"),
     adSize: document.getElementById("adSize"),
+    adNewUnit: document.getElementById("adNewUnit"),
+    normalNewUnit: document.getElementById("normalNewUnit"),
     adFreq: document.getElementById("adFreq"),
     adCost: document.getElementById("adCost"),
     adCostRange: document.getElementById("adCostRange"),
@@ -1107,88 +1109,88 @@
      成立する水準かを確認している（逆算反響率は 0.0011〜0.019% で、折込チラシ1枚の
      業種別相場をいずれも下回る控えめな想定）。
      一宮・稲沢版は20万部、他5版は各6万部（6誌計 約51万世帯）。
-     preset.size / preset.freq = おすすめする当社媒体の広告サイズと掲載頻度。 */
+     preset.size / preset.freq = おすすめする情報誌の広告サイズと掲載頻度。 */
   var GENRES = [
     {
-      key: "gourmet", label: "グルメ（飲食店・カフェ）",
+      key: "gourmet", unit: "人", label: "グルメ（飲食店・カフェ）",
       low: 1000, mid: 2000, high: 3000,
-      basis: "地方都市の実勢CPAは1,000〜3,000円、月間販促費の相場は5〜15万円。目標45人×2,000円＝月9万円で相場内。当社媒体1回37.5人＝反響率0.019%の想定",
+      basis: "地方都市の実勢CPAは1,000〜3,000円、月間販促費の相場は5〜15万円。目標45人×2,000円＝月9万円で相場内。情報誌1回37.5人＝反響率0.019%の想定",
       preset: { unitPrice: 3500, normalNew: 30, repeatRate: 30, revisitInterval: 1, adNew: 45, adArea: "一宮", size: "fmt1_4P", freq: 1 }
     },
     {
-      key: "beauty", label: "ビューティー（美容室・ネイル・リラク）",
+      key: "beauty", unit: "人", label: "ビューティー（美容室・ネイル・リラク）",
       low: 3000, mid: 4500, high: 6000,
-      basis: "地方都市の実勢CPAは3,000〜6,000円、月間販促費の相場は10〜20万円。ホットペッパービューティーは最下位プランでも月2.5万円〜なので、この水準が実態。当社媒体1回16.7人＝反響率0.008%の想定",
+      basis: "地方都市の実勢CPAは3,000〜6,000円、月間販促費の相場は10〜20万円。ホットペッパービューティーは最下位プランでも月2.5万円〜なので、この水準が実態。情報誌1回16.7人＝反響率0.008%の想定",
       preset: { unitPrice: 6000, normalNew: 20, repeatRate: 50, revisitInterval: 2, adNew: 30, adArea: "一宮", size: "fmt1_4P", freq: 1 }
     },
     {
-      key: "esthe", label: "エステ・脱毛・痩身",
+      key: "esthe", unit: "件", label: "エステ・脱毛・痩身",
       low: 4000, mid: 8000, high: 12000,
       basis: "地方都市の実勢CPAは4,000〜12,000円、月間販促費の相場は10〜25万円。コース契約前提でLTVから逆算できるため、来店型より高いCPAが許容される",
       preset: { unitPrice: 30000, normalNew: 10, repeatRate: 60, revisitInterval: 1, adNew: 15, adArea: "一宮", size: "fmt1_4P", freq: 1, priceRange: { min: 0, max: 200000, step: 5000 } }
     },
     {
-      key: "school", label: "スクール（教室・習い事・塾）",
+      key: "school", unit: "人", label: "スクール（教室・習い事・塾）",
       low: 8000, mid: 14000, high: 20000,
       basis: "地方都市の実勢CPAは8,000〜20,000円、月間販促費の相場は10〜20万円。客単価は入会金＋教材費＋初月月謝の初回売上で見ている。数ヶ月〜数年の継続が前提なのでLTVから逆算できる",
       preset: { unitPrice: 45000, normalNew: 7, repeatRate: 85, revisitInterval: 1, adNew: 10, adArea: "一宮", size: "fmt1_4P", freq: 1 }
     },
     {
-      key: "clinic", label: "医療・クリニック（歯科・整体・接骨院）",
+      key: "clinic", unit: "人", label: "医療・クリニック（歯科・整体・接骨院）",
       low: 5000, mid: 8000, high: 12000,
       basis: "地方都市の実勢CPAは5,000〜12,000円、月間販促費の相場は15〜30万円。客単価は初診＋検査＋処置の初回売上（自由診療を含む平均）で見ている",
       preset: { unitPrice: 12000, normalNew: 18, repeatRate: 50, revisitInterval: 1, adNew: 25, adArea: "一宮", size: "fmt1_2P", freq: 1 }
     },
     {
-      key: "shop", label: "ショップ（物販店）",
+      key: "shop", unit: "人", label: "ショップ（物販店）",
       low: 2000, mid: 3500, high: 5000,
       basis: "地方都市の実勢CPAは2,000〜5,000円、月間販促費の相場は5〜15万円。客単価は初回購入額（雑貨からアパレルまでの中間）で見ている",
       preset: { unitPrice: 6000, normalNew: 25, repeatRate: 30, revisitInterval: 3, adNew: 35, adArea: "一宮", size: "fmt1_4P", freq: 1 }
     },
     {
-      key: "chumon", label: "注文住宅（新築・工務店・ハウスメーカー）",
+      key: "chumon", unit: "棟", label: "注文住宅（新築・工務店・ハウスメーカー）",
       low: 50000, mid: 100000, high: 150000,
       basis: "地方都市の実勢CPA（契約1棟あたり）は50,000〜150,000円、月間販促費の相場は30〜100万円。契約金額3,000万円に対して0.3%で、業界目安「契約金額の3%」に対してかなり堅めの設定",
       preset: { unitPrice: 30000000, normalNew: 2, repeatRate: 1, revisitInterval: 12, adNew: 3, adArea: "一宮", size: "free1P", freq: 1, priceRange: { min: 0, max: 100000000, step: 1000000 } }
     },
     {
-      key: "reform", label: "リフォーム（改装・水回り・外壁）",
+      key: "reform", unit: "件", label: "リフォーム（改装・水回り・外壁）",
       low: 30000, mid: 50000, high: 80000,
       basis: "地方都市の実勢CPA（問合せ・反響1件あたり）は30,000〜80,000円、月間販促費の相場は20〜50万円。リピートは少ないが1件あたりの粗利が大きいため、この水準でも利益が残る",
       preset: { unitPrice: 1000000, normalNew: 3, repeatRate: 5, revisitInterval: 12, adNew: 4, adArea: "一宮", size: "free1_2P", freq: 1, priceRange: { min: 0, max: 5000000, step: 100000 } }
     },
     {
-      key: "realestate", label: "不動産（賃貸・売買仲介）",
+      key: "realestate", unit: "件", label: "不動産（賃貸・売買仲介）",
       low: 30000, mid: 50000, high: 80000,
       basis: "地方都市の実勢CPAは30,000〜80,000円、月間販促費の相場は20〜60万円。資料請求や内見の段階で数万円のCPAを設定しても、仲介手数料で回収できる",
       preset: { unitPrice: 300000, normalNew: 5, repeatRate: 5, revisitInterval: 12, adNew: 8, adArea: "一宮", size: "free1P", freq: 1, priceRange: { min: 0, max: 2000000, step: 50000 } }
     },
     {
-      key: "car", label: "車・バイク（販売・整備・車検）",
+      key: "car", unit: "件", label: "車・バイク（販売・整備・車検）",
       low: 10000, mid: 17000, high: 25000,
       basis: "地方都市の実勢CPAは10,000〜25,000円、月間販促費の相場は15〜30万円。車検・整備で毎年戻ってくる前提なので、LTVから逆算して1〜2万円台のCPAが成立する",
       preset: { unitPrice: 50000, normalNew: 8, repeatRate: 60, revisitInterval: 12, adNew: 12, adArea: "一宮", size: "fmt1_2P", freq: 1, priceRange: { min: 0, max: 300000, step: 5000 } }
     },
     {
-      key: "leisure", label: "レジャー・旅行・宿泊",
+      key: "leisure", unit: "人", label: "レジャー・旅行・宿泊",
       low: 3000, mid: 5000, high: 8000,
       basis: "地方都市の実勢CPAは3,000〜8,000円、月間販促費の相場は10〜25万円。日帰りレジャー・温浴施設の利用を想定",
       preset: { unitPrice: 8000, normalNew: 25, repeatRate: 25, revisitInterval: 6, adNew: 35, adArea: "一宮", size: "fmt1_4P", freq: 1 }
     },
     {
-      key: "ceremony", label: "冠婚葬祭（式場・葬儀・仏事）",
+      key: "ceremony", unit: "件", label: "冠婚葬祭（式場・葬儀・仏事）",
       low: 30000, mid: 50000, high: 70000,
       basis: "地方都市の実勢CPAは30,000〜70,000円、月間販促費の相場は20〜50万円。検討期間が長く、相談・見学の段階で数万円のCPAを投じても1件の粗利で回収できる",
       preset: { unitPrice: 1500000, normalNew: 4, repeatRate: 1, revisitInterval: 12, adNew: 6, adArea: "一宮", size: "free1_2P", freq: 1, priceRange: { min: 0, max: 3000000, step: 100000 } }
     },
     {
-      key: "btob", label: "BtoB・士業・各種サービス",
+      key: "btob", unit: "件", label: "BtoB・士業・各種サービス",
       low: 20000, mid: 35000, high: 50000,
       basis: "地方都市の実勢CPAは20,000〜50,000円、月間販促費の相場は15〜40万円。問合せ1件あたりの単価。紙媒体では反響が出にくい業種",
       preset: { unitPrice: 200000, normalNew: 5, repeatRate: 20, revisitInterval: 12, adNew: 8, adArea: "一宮", size: "fmt1_2P", freq: 1, priceRange: { min: 0, max: 1000000, step: 20000 } }
     },
     {
-      key: "average", label: "全業種の平均（業種が決まっていないとき）",
+      key: "average", unit: "人", label: "全業種の平均（業種が決まっていないとき）",
       low: 3000, mid: 8000, high: 20000,
       basis: "13ジャンルの実勢CPAの幅を踏まえた中間帯。業種が決まったら必ず選び直してください",
       preset: null
@@ -1277,6 +1279,17 @@
       "岩倉": { "1": 35000, "2": 40000, "3": 46000, "4": 52000, "0": 59000 }
     }
   };
+
+  /* ジャンルによって数える対象が変わる（人／件／棟）。 */
+  function unitOf() {
+    return (currentGenre && currentGenre.unit) || "人";
+  }
+
+  function renderUnits() {
+    var u = unitOf();
+    els.adNewUnit.textContent = u + " / 月";
+    els.normalNewUnit.textContent = u + " / 月";
+  }
 
   function findSize(key) {
     for (var i = 0; i < SIZES.length; i++) {
@@ -1603,12 +1616,12 @@
 
   function renderNote(normalNew, adNew) {
     if (normalNew <= 0) {
-      els.adNewNote.innerHTML = "通常獲得数が0人のため、比較の参考値は表示されません。";
+      els.adNewNote.innerHTML = "通常獲得数が0" + unitOf() + "のため、比較の参考値は表示されません。";
       return;
     }
     var pct = Math.round((adNew / normalNew) * 100);
     els.adNewNote.innerHTML =
-      "通常の新規獲得数 <strong>" + normalNew + "人</strong> に対して、広告で <strong>+" + adNew + "人（+" + pct + "%）</strong> の上乗せを見込む試算です。";
+      "通常の新規獲得数 <strong>" + normalNew + unitOf() + "</strong> に対して、広告で <strong>+" + adNew + unitOf() + "（+" + pct + "%）</strong> の上乗せを見込む試算です。";
   }
 
   function seisakuNote() {
@@ -1647,7 +1660,7 @@
           "<span class=\"month-badge " + cumClass + "\">" + (r.cumProfit >= 0 ? "+" : "") + man(r.cumProfit) + "</span>" +
         "</div>" +
         "<div class=\"month-card-grid\">" +
-          "<div class=\"month-metric\"><span class=\"month-metric-label\">広告経由の顧客数</span><span class=\"month-metric-value\">" + r.active.toFixed(1) + "人</span></div>" +
+          "<div class=\"month-metric\"><span class=\"month-metric-label\">広告経由の獲得数</span><span class=\"month-metric-value\">" + r.active.toFixed(1) + unitOf() + "</span></div>" +
           "<div class=\"month-metric\"><span class=\"month-metric-label\">月間損益</span><span class=\"month-metric-value " + monClass + "\">" + (r.monthlyProfit >= 0 ? "+" : "") + yen(r.monthlyProfit) + "</span></div>" +
           "<div class=\"month-metric\"><span class=\"month-metric-label\">月間売上</span><span class=\"month-metric-value\">" + yen(r.monthlyRevenue) + "</span></div>" +
           "<div class=\"month-metric\"><span class=\"month-metric-label\">月間広告費</span><span class=\"month-metric-value\">" + yen(r.monthlyAdSpend) + "</span></div>" +
@@ -1853,8 +1866,8 @@
       return;
     }
     els.targetYearNote.innerHTML =
-      "年間では <strong>" + (target * 12).toLocaleString("ja-JP") + "人</strong> の新規獲得が目標です（" +
-      target.toLocaleString("ja-JP") + "人 × 12ヶ月）。";
+      "年間では <strong>" + (target * 12).toLocaleString("ja-JP") + unitOf() + "</strong> の新規獲得が目標です（" +
+      target.toLocaleString("ja-JP") + unitOf() + " × 12ヶ月）。";
   }
 
   function renderCpaNote(cpa) {
@@ -1882,7 +1895,7 @@
       target.toLocaleString("ja-JP") + "人 / 月 × CPA " + yen(cpa) + " = " + yen(budgetMonth) + " / 月";
 
     els.valBudgetYear.innerHTML = budgetYear > 0 ? man(budgetYear) : "—";
-    els.valBudgetPeople.innerHTML = peopleYear.toLocaleString("ja-JP") + "<span class=\"unit\">人</span>";
+    els.valBudgetPeople.innerHTML = peopleYear.toLocaleString("ja-JP") + "<span class=\"unit\">" + unitOf() + "</span>";
     els.valBudgetSales.innerHTML = salesYear > 0 ? man(salesYear) : "—";
 
     var ratioEl = els.valBudgetRatio;
@@ -1910,7 +1923,7 @@
     var freqLabel = els.adFreq.options[els.adFreq.selectedIndex].textContent;
 
     if (budgetYear <= 0 || target <= 0) {
-      els.compareBox.innerHTML = "獲得したい人数と CPA を入力すると、必要販促費のうち当社媒体が占める割合を表示します。";
+      els.compareBox.innerHTML = "獲得したい人数と CPA を入力すると、必要販促費のうち情報誌が占める割合を表示します。";
       return;
     }
 
@@ -1919,19 +1932,19 @@
 
     if (ourYear <= budgetYear) {
       html =
-        "必要販促費 <strong>年間 " + yen(budgetYear) + "</strong> のうち、当社媒体（" + areaLabel + "／" + freqLabel + "）は " +
+        "必要販促費 <strong>年間 " + yen(budgetYear) + "</strong> のうち、情報誌（" + areaLabel + "／" + freqLabel + "）は " +
         "<strong>年間 " + yen(ourYear) + "</strong>。全販促費の <strong>" + share.toFixed(0) + "%</strong> にあたり、" +
         "残り <strong>" + yen(budgetYear - ourYear) + "</strong> を他の販促（チラシ・Web・SNSなど）に配分できます。";
     } else {
       var fitTarget = cpa > 0 ? Math.round(ourYear / 12 / cpa) : 0;
       html =
-        "当社媒体（" + areaLabel + "／" + freqLabel + "）の広告費 <strong>年間 " + yen(ourYear) + "</strong> は、" +
+        "情報誌（" + areaLabel + "／" + freqLabel + "）の広告費 <strong>年間 " + yen(ourYear) + "</strong> は、" +
         "必要販促費 <strong>年間 " + yen(budgetYear) + "</strong> を <strong>" + yen(ourYear - budgetYear) + "</strong> 上回ります。" +
-        "この予算なら、目標を <strong>月 " + fitTarget.toLocaleString("ja-JP") + "人</strong> まで引き上げる想定が釣り合います（CPA " + yen(cpa) + " のとき）。";
+        "この予算なら、目標を <strong>月 " + fitTarget.toLocaleString("ja-JP") + unitOf() + "</strong> まで引き上げる想定が釣り合います（CPA " + yen(cpa) + " のとき）。";
     }
 
     if (peopleYear > 0) {
-      html += "<br>参考：当社媒体だけで年間 " + peopleYear.toLocaleString("ja-JP") + "人 を獲得できた場合、実質CPAは <strong>" +
+      html += "<br>参考：情報誌だけで年間 " + peopleYear.toLocaleString("ja-JP") + unitOf() + " を獲得できた場合、実質CPAは <strong>" +
         yen(ourYear / peopleYear) + "</strong> になります。";
     }
 
@@ -1952,6 +1965,7 @@
     var revisitInterval = parseFloat(els.repeatFreq.value) || 1;
     var repeatRate = Math.min(1, Math.max(0, repeatRatePct / 100));
 
+    renderUnits();
     renderTargetNote(adNew);
     renderTierState(cpa);
     renderCpaNote(cpa);
