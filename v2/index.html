@@ -767,133 +767,6 @@
   .v1-link {
     color: var(--ink-muted);
   }
-
-  /* ================= ヒアリング → 参考数値（2026-10-26 追加） ================= */
-
-  .hearing-badge {
-    flex: 0 0 auto;
-    display: inline-flex;
-    align-items: center;
-    height: 30px;
-    padding: 0 12px;
-    border-radius: 999px;
-    background: var(--accent-profit-pos);
-    color: #fff;
-    font-size: 0.86rem;
-    font-weight: 800;
-    letter-spacing: 0.06em;
-  }
-
-  .hearing-card .step-lead { padding-left: 0; }
-
-  .hearing-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px 10px;
-  }
-
-  @media (min-width: 480px) {
-    .hearing-grid { grid-template-columns: 1fr 1fr; }
-    .hearing-grid .field.is-wide { grid-column: 1 / -1; }
-  }
-
-  .hearing-grid .field { min-width: 0; }
-  .hearing-grid .field-input-row input[type="number"],
-  .hearing-grid .field-input-row input[type="text"] { width: 100%; font-size: 1.15rem; padding: 10px 12px; }
-
-  .hearing-grid .field .hint { display: block; }
-
-  .analysis-card {
-    padding: 0;
-    overflow: hidden;
-  }
-
-  .analysis-head {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 13px 16px;
-    background: var(--accent-profit-pos);
-    color: #fff;
-  }
-
-  .analysis-dot {
-    flex: 0 0 auto;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    border: 3px solid rgba(255, 255, 255, 0.85);
-    box-sizing: border-box;
-  }
-
-  .analysis-head h2 {
-    font-family: var(--font-display);
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin: 0;
-    letter-spacing: 0.02em;
-  }
-
-  .analysis-body { padding: 14px 16px 18px; }
-
-  .analysis-point {
-    margin: 0 0 14px;
-    font-size: 0.92rem;
-    line-height: 1.7;
-    color: var(--ink-muted);
-  }
-
-  .analysis-point b { color: var(--accent-profit-pos); }
-
-  .analysis-point .pt-list { display: block; font-weight: 700; color: var(--ink); }
-
-  .stat-sub {
-    font-size: 0.78rem;
-    color: var(--ink-muted);
-  }
-
-  .pl-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.9rem;
-    margin: 4px 0 12px;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .pl-table th, .pl-table td {
-    padding: 6px 4px;
-    border-bottom: 1px solid var(--border);
-    text-align: right;
-    white-space: nowrap;
-  }
-
-  .pl-table th { text-align: left; font-weight: 600; color: var(--ink-muted); }
-  .pl-table tr.is-sum th, .pl-table tr.is-sum td { font-weight: 800; color: var(--ink); }
-  .pl-table tr.is-profit td.is-neg { color: var(--accent-profit-neg); }
-  .pl-table tr.is-profit td.is-pos { color: var(--accent-profit-pos); }
-  .pl-table .pl-tag { font-size: 0.72rem; font-weight: 700; color: var(--accent-cost); margin-left: 4px; }
-
-  .apply-btn {
-    margin-top: 12px;
-    width: 100%;
-    border: 1px solid var(--accent-cost);
-    background: var(--accent-cost);
-    color: #fff;
-    border-radius: 12px;
-    padding: 11px 14px;
-    font: inherit;
-    font-weight: 700;
-    cursor: pointer;
-  }
-
-  .apply-btn:hover { filter: brightness(1.08); }
-
-  .apply-done {
-    margin: 8px 0 0;
-    font-size: 0.88rem;
-    font-weight: 700;
-    color: var(--accent-profit-pos);
-  }
 </style>
 
 <div class="page">
@@ -901,135 +774,8 @@
     <span class="ver-badge">Ver.2</span>
     <p class="eyebrow">K-create ／ 広告効果シミュレーション</p>
     <h1 class="headline">販促費シミュレーション</h1>
-    <p class="subhead">まずお客様の状況を簡単にヒアリングすると、<strong>想定P/L</strong>と<strong>損益分岐点</strong>の参考数値が出ます。続けて、CPA（顧客獲得単価）から<strong>必要な販促費</strong>を逆算します。そのまま12ヶ月の費用対効果まで確認できます。</p>
+    <p class="subhead">ジャンルを選んで「何人ほしいか」を入れるだけで、CPA（顧客獲得単価）から<strong>必要な販促費</strong>を逆算します。そのまま12ヶ月の費用対効果まで確認できます。</p>
   </header>
-
-  <!-- ヒアリング（2026-10-26 追加）: 分かる項目だけ入れる。空欄は業種の標準値で推測 -->
-  <section class="card step-card hearing-card" aria-label="ヒアリング">
-    <div class="step-head">
-      <span class="hearing-badge">ヒアリング</span>
-      <h2 class="step-title">まずお客様の状況を伺います</h2>
-    </div>
-    <p class="step-lead">分かる項目だけで大丈夫です。空欄は業種の標準値で推測して、下の「想定P/L状況」「損益分岐点」に参考数値を出します。</p>
-
-    <div class="hearing-grid">
-      <div class="field is-wide">
-        <div class="field-label-row">
-          <label for="hGenre">業種（ジャンル）</label>
-          <span class="hint">STEP1のジャンルと連動します</span>
-        </div>
-        <select id="hGenre"></select>
-      </div>
-      <div class="field">
-        <div class="field-label-row">
-          <label for="hStaff">規模（従業員数）</label>
-        </div>
-        <div class="field-input-row">
-          <input type="number" id="hStaff" value="5" min="0" step="1" inputmode="numeric" />
-          <span class="field-suffix">人</span>
-        </div>
-        <span class="hint">パート・アルバイトも含めたおおよその人数</span>
-      </div>
-      <div class="field">
-        <div class="field-label-row">
-          <label for="hUnitPrice">客単価</label>
-        </div>
-        <div class="field-input-row">
-          <input type="text" id="hUnitPrice" value="3,500" inputmode="numeric" />
-          <span class="field-suffix">円</span>
-        </div>
-        <span class="hint">STEP4の客単価と連動します</span>
-      </div>
-      <div class="field">
-        <div class="field-label-row">
-          <label for="hSales">月商（分かれば）</label>
-        </div>
-        <div class="field-input-row">
-          <input type="text" id="hSales" value="" placeholder="空欄なら推測" inputmode="numeric" />
-          <span class="field-suffix">円/月</span>
-        </div>
-        <span class="hint">空欄なら「従業員数 × 業種の1人あたり月商」で推測</span>
-      </div>
-      <div class="field">
-        <div class="field-label-row">
-          <label for="hFixed">固定費（分かれば）</label>
-        </div>
-        <div class="field-input-row">
-          <input type="text" id="hFixed" value="" placeholder="空欄なら推測" inputmode="numeric" />
-          <span class="field-suffix">円/月</span>
-        </div>
-        <span class="hint">家賃・人件費・光熱費など販促費以外の固定・販管費の合計</span>
-      </div>
-      <div class="field is-wide">
-        <div class="field-label-row">
-          <label for="hPromo">現在の販促費（分かれば）</label>
-        </div>
-        <div class="field-input-row">
-          <input type="text" id="hPromo" value="" placeholder="空欄なら業種の比率で推測" inputmode="numeric" />
-          <span class="field-suffix">円/月</span>
-        </div>
-        <span class="hint">チラシ・Web・ポータルサイトなど、いま使っている販促費の合計</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="card analysis-card" aria-label="想定P/L状況">
-    <div class="analysis-head"><span class="analysis-dot"></span><h2>想定P/L状況</h2></div>
-    <div class="analysis-body">
-      <p class="analysis-point"><b>【分析のポイント】</b>業種・規模・単価から、以下の標準値を推測します。<span class="pt-list">・売上規模　・原価率　・販促費比率</span></p>
-      <div class="stat-grid">
-        <div class="stat-tile is-primary">
-          <span class="stat-label">想定月商（売上規模）</span>
-          <span class="stat-value" id="plSales">—</span>
-          <span class="stat-sub" id="plSalesSub"></span>
-        </div>
-        <div class="stat-tile">
-          <span class="stat-label">原価率（粗利率）</span>
-          <span class="stat-value" id="plCogs">—</span>
-        </div>
-        <div class="stat-tile">
-          <span class="stat-label">販促費比率の目安</span>
-          <span class="stat-value" id="plPromoRate">—</span>
-          <span class="stat-sub" id="plPromoSub"></span>
-        </div>
-      </div>
-      <table class="pl-table" id="plTable"></table>
-      <p class="note-line" id="plNote"></p>
-    </div>
-  </section>
-
-  <section class="card analysis-card" aria-label="損益分岐点（BEP）">
-    <div class="analysis-head"><span class="analysis-dot"></span><h2>損益分岐点（BEP）</h2></div>
-    <div class="analysis-body">
-      <p class="analysis-point"><b>【分析のポイント】</b>固定・販管費を回収できる構造かを把握します。<span class="pt-list">どの程度の「売上」「粗利」を上げれば固定・販管費をカバーできるかの境界線を算出。</span></p>
-      <div class="stat-grid">
-        <div class="stat-tile is-primary">
-          <span class="stat-label">損益分岐点の売上（月）</span>
-          <span class="stat-value" id="bepSales">—</span>
-          <span class="stat-sub" id="bepSalesSub"></span>
-        </div>
-        <div class="stat-tile">
-          <span class="stat-label">必要な粗利（＝固定・販管費）</span>
-          <span class="stat-value" id="bepGross">—</span>
-        </div>
-        <div class="stat-tile">
-          <span class="stat-label">想定月商との差</span>
-          <span class="stat-value" id="bepGap">—</span>
-        </div>
-        <div class="stat-tile">
-          <span class="stat-label">安全余裕率</span>
-          <span class="stat-value" id="bepMargin">—</span>
-        </div>
-        <div class="stat-tile">
-          <span class="stat-label">BEPに必要な客数（月）</span>
-          <span class="stat-value" id="bepCustomers">—</span>
-        </div>
-      </div>
-      <div class="compare-box" id="bepBox"></div>
-      <button type="button" class="apply-btn" id="bepApply" hidden></button>
-      <p class="apply-done" id="bepApplied" hidden></p>
-    </div>
-  </section>
 
   <section class="card step-card" aria-label="STEP1 ジャンル別のCPA">
     <div class="step-head">
@@ -1315,7 +1061,6 @@
     <p>STEP3の<strong>「必要な販促費」は、チラシ・Web・SNS・ポータルサイトなど情報誌以外も含めた、すべての販促手段を合わせた全販促費</strong>の目安です。STEP5の費用対効果シミュレーションは、そのうち<strong>情報誌に出稿した場合</strong>の売上・損益を計算しています。両者は範囲が違うため、STEP3では「必要販促費のうち情報誌が占める割合」を、STEP6では「必要販促費から情報誌の掲載料を引いた残り」を表示しています。</p>
     <p>広告経由の来店者数は、<strong>「広告を掲載した月に加わる新規集客数」＋「来店頻度のタイミングで発生するリピート来店数（新規集客数×リピート率）」</strong>として計算しています。リピート来店は広告を実施した回数を基準に発生し、2回目以降の掲載タイミングのうち「来店頻度」で選んだ間隔ごとにだけ計上されます（広告を打っていない月には発生しません）。</p>
     <p>売上・損益は、あくまで<strong>広告によって上乗せされた分</strong>のみを計算しています。</p>
-    <p>冒頭の<strong>「想定P/L状況」「損益分岐点」</strong>は、ヒアリングで分かった数字（月商・固定費・販促費）をそのまま使い、空欄の項目は<strong>業種ごとの一般的な比率（原価率・人件費率・家賃比率・その他経費率・販促費比率）と従業員1人あたりの月商</strong>で推測した参考値です。損益分岐点の売上は「（固定費＋販促費）÷ 粗利率」で計算しています。実際の数字が分かれば入れ替えてください。</p>
     <p>CPAも反響も、季節・競合・原稿内容・立地など様々な要因で変動します。この試算は打ち合わせ時の目安としてご活用ください。</p>
     <ul class="source-list">
       <li>反響率の参考：<a href="https://www.meiko-kikaku.co.jp/blog/news/15387/" target="_blank" rel="noopener">チラシの反響率の目安はどれくらい？業種別の相場と上げ方【2026年版】（明光企画）</a></li>
@@ -1327,7 +1072,7 @@
   </section>
 
   <footer class="footer">
-    <p>Kei Create — 販促費シミュレーション Ver.2（社内検討用ツール）2026.10.26</p>
+    <p>Kei Create — 販促費シミュレーション Ver.2（社内検討用ツール）2026.8.27</p>
     <p><a class="v1-link" href="../">Ver.1（広告効果測定シミュレーション）はこちら</a></p>
   </footer>
 </div>
@@ -1383,50 +1128,8 @@
     valYearProfit: document.getElementById("valYearProfit"),
     chart: document.getElementById("chart"),
     chartTooltip: document.getElementById("chartTooltip"),
-    monthlyList: document.getElementById("monthlyList"),
-    hGenre: document.getElementById("hGenre"),
-    hStaff: document.getElementById("hStaff"),
-    hUnitPrice: document.getElementById("hUnitPrice"),
-    hSales: document.getElementById("hSales"),
-    hFixed: document.getElementById("hFixed"),
-    hPromo: document.getElementById("hPromo"),
-    plSales: document.getElementById("plSales"),
-    plSalesSub: document.getElementById("plSalesSub"),
-    plCogs: document.getElementById("plCogs"),
-    plPromoRate: document.getElementById("plPromoRate"),
-    plPromoSub: document.getElementById("plPromoSub"),
-    plTable: document.getElementById("plTable"),
-    plNote: document.getElementById("plNote"),
-    bepSales: document.getElementById("bepSales"),
-    bepSalesSub: document.getElementById("bepSalesSub"),
-    bepGross: document.getElementById("bepGross"),
-    bepGap: document.getElementById("bepGap"),
-    bepMargin: document.getElementById("bepMargin"),
-    bepCustomers: document.getElementById("bepCustomers"),
-    bepBox: document.getElementById("bepBox"),
-    bepApply: document.getElementById("bepApply"),
-    bepApplied: document.getElementById("bepApplied")
+    monthlyList: document.getElementById("monthlyList")
   };
-
-  /* ヒアリング用: 業種ごとの標準値（売上に対する%）と、従業員1人あたりの月商（円）・従業員数の初期値。
-     一般的な業界の損益構造からの目安。原価率・人件費率・家賃比率・その他経費率・販促費比率の残りが営業利益率。 */
-  var PL_STD = {
-    gourmet:    { cogs: 30, labor: 30, rent: 10, other: 18, promo: 4,  perStaff: 600000,  staff: 5 },
-    beauty:     { cogs: 10, labor: 45, rent: 10, other: 20, promo: 5,  perStaff: 550000,  staff: 3 },
-    esthe:      { cogs: 15, labor: 35, rent: 12, other: 18, promo: 10, perStaff: 700000,  staff: 3 },
-    school:     { cogs: 10, labor: 40, rent: 12, other: 20, promo: 8,  perStaff: 450000,  staff: 3 },
-    clinic:     { cogs: 18, labor: 32, rent: 8,  other: 24, promo: 3,  perStaff: 900000,  staff: 6 },
-    shop:       { cogs: 55, labor: 15, rent: 10, other: 12, promo: 3,  perStaff: 1200000, staff: 3 },
-    chumon:     { cogs: 72, labor: 10, rent: 2,  other: 8,  promo: 4,  perStaff: 4000000, staff: 8 },
-    reform:     { cogs: 65, labor: 15, rent: 3,  other: 9,  promo: 4,  perStaff: 2500000, staff: 5 },
-    realestate: { cogs: 10, labor: 40, rent: 8,  other: 24, promo: 10, perStaff: 1000000, staff: 4 },
-    car:        { cogs: 70, labor: 13, rent: 3,  other: 9,  promo: 2,  perStaff: 3000000, staff: 6 },
-    leisure:    { cogs: 20, labor: 30, rent: 12, other: 25, promo: 5,  perStaff: 600000,  staff: 8 },
-    ceremony:   { cogs: 40, labor: 25, rent: 8,  other: 16, promo: 5,  perStaff: 1500000, staff: 10 },
-    btob:       { cogs: 30, labor: 40, rent: 6,  other: 14, promo: 4,  perStaff: 1000000, staff: 5 },
-    average:    { cogs: 35, labor: 28, rent: 8,  other: 18, promo: 5,  perStaff: 1000000, staff: 5 }
-  };
-  var lastAnalysis = null;
 
   var BASE_PRICE_RANGE = { min: 100, max: 50000, step: "any" };
 
@@ -1791,163 +1494,13 @@
     els.adFreq.value = String(p.freq);
   }
 
-  function onGenreChange() {
+  els.genreSelect.addEventListener("change", function () {
     currentGenre = findGenre(els.genreSelect.value);
-    els.hGenre.value = currentGenre.key;
     applyCpaRange(currentGenre);
     setCpa(currentGenre.mid);
     applyPreset(currentGenre.preset);
-    var std = PL_STD[currentGenre.key] || PL_STD.average;
-    els.hStaff.value = std.staff;   // 規模の初期値はジャンルごと（入力した月商・固定費・販促費はそのまま）
     updateAdCostFromTable();
     renderCpaRef();
-    render();
-  }
-  els.genreSelect.addEventListener("change", onGenreChange);
-
-  /* ---------- ヒアリング（冒頭） ---------- */
-
-  GENRES.forEach(function (g) {
-    var opt = document.createElement("option");
-    opt.value = g.key;
-    opt.textContent = g.label;
-    els.hGenre.appendChild(opt);
-  });
-  els.hGenre.value = currentGenre.key;
-  els.hGenre.addEventListener("change", function () {
-    els.genreSelect.value = els.hGenre.value;
-    onGenreChange();
-  });
-
-  function fmtInputNumber(el) {
-    var raw = String(el.value).replace(/[^0-9]/g, "");
-    el.value = raw === "" ? "" : Number(raw).toLocaleString("ja-JP");
-  }
-  ["hSales", "hFixed", "hPromo"].forEach(function (id) {
-    els[id].addEventListener("input", render);
-    els[id].addEventListener("blur", function () { fmtInputNumber(els[id]); });
-  });
-  els.hStaff.addEventListener("input", render);
-  // 客単価はSTEP4と連動（ヒアリング側で入れたらSTEP4へ、STEP4で動かしたらヒアリング側へ）
-  els.hUnitPrice.addEventListener("input", function () {
-    var v = num(els.hUnitPrice, 0);
-    els.unitPrice.value = v.toLocaleString("ja-JP");
-    els.unitPriceRange.value = v;
-    render();
-  });
-  els.hUnitPrice.addEventListener("blur", function () { fmtInputNumber(els.hUnitPrice); });
-
-  function pct(v, digits) { return (v * 100).toFixed(digits === undefined ? 0 : digits) + "<span class=\"unit\">%</span>"; }
-
-  function analyze(unitPrice) {
-    var std = PL_STD[currentGenre.key] || PL_STD.average;
-    var staff = num(els.hStaff, 0);
-    var salesIn = num(els.hSales, 0);
-    var fixedIn = num(els.hFixed, 0);
-    var promoIn = num(els.hPromo, 0);
-    var sales = salesIn > 0 ? salesIn : staff * std.perStaff;
-    var salesEstimated = !(salesIn > 0);
-    var cogsRate = std.cogs / 100;
-    var grossRate = 1 - cogsRate;
-    var cogs = sales * cogsRate;
-    var gross = sales - cogs;
-    var fixedEstimated = !(fixedIn > 0);
-    var labor = sales * std.labor / 100, rent = sales * std.rent / 100, other = sales * std.other / 100;
-    var fixed = fixedEstimated ? labor + rent + other : fixedIn;
-    var promoEstimated = !(promoIn > 0);
-    var promo = promoEstimated ? sales * std.promo / 100 : promoIn;
-    var promoRate = sales > 0 ? promo / sales : 0;
-    var profit = gross - fixed - promo;
-    var bep = grossRate > 0 ? (fixed + promo) / grossRate : 0;
-    var gap = sales - bep;
-    var margin = sales > 0 ? gap / sales : 0;
-    var bepCustomers = unitPrice > 0 ? bep / unitPrice : 0;
-    var shortCustomers = unitPrice > 0 && gap < 0 ? Math.ceil(-gap / unitPrice) : 0;
-    return {
-      std: std, staff: staff, sales: sales, salesEstimated: salesEstimated, cogsRate: cogsRate, grossRate: grossRate,
-      cogs: cogs, gross: gross, labor: labor, rent: rent, other: other, fixed: fixed, fixedEstimated: fixedEstimated,
-      promo: promo, promoEstimated: promoEstimated, promoRate: promoRate, profit: profit,
-      bep: bep, gap: gap, margin: margin, bepCustomers: bepCustomers, shortCustomers: shortCustomers, unitPrice: unitPrice
-    };
-  }
-
-  function renderAnalysis(a) {
-    var tag = function (est) { return est ? "<span class=\"pl-tag\">推測</span>" : "<span class=\"pl-tag\">入力</span>"; };
-    if (!(a.sales > 0)) {
-      els.plSales.innerHTML = "—"; els.plSalesSub.textContent = "従業員数か月商を入れてください";
-      els.plCogs.innerHTML = "—"; els.plPromoRate.innerHTML = "—"; els.plPromoSub.textContent = "";
-      els.plTable.innerHTML = ""; els.plNote.innerHTML = "";
-      els.bepSales.innerHTML = "—"; els.bepSalesSub.textContent = ""; els.bepGross.innerHTML = "—"; els.bepGap.innerHTML = "—";
-      els.bepMargin.innerHTML = "—"; els.bepCustomers.innerHTML = "—"; els.bepBox.innerHTML = "ヒアリングで従業員数か月商を入れると、損益分岐点を表示します。";
-      els.bepApply.hidden = true; els.bepApplied.hidden = true;
-      return;
-    }
-    // 想定P/L
-    els.plSales.innerHTML = man(a.sales) + "<span class=\"unit\">/月</span>";
-    els.plSalesSub.textContent = a.salesEstimated
-      ? "推測：従業員 " + a.staff.toLocaleString("ja-JP") + "人 × 1人あたり月商 " + man(a.std.perStaff) + "（年商 " + man(a.sales * 12) + "）"
-      : "ヒアリングの月商（年商 " + man(a.sales * 12) + "）";
-    els.plCogs.innerHTML = pct(a.cogsRate) + "<span class=\"unit\">（粗利 " + Math.round(a.grossRate * 100) + "%）</span>";
-    els.plPromoRate.innerHTML = pct(a.promoRate, a.promoRate < 0.1 ? 1 : 0);
-    els.plPromoSub.textContent = (a.promoEstimated ? "業種の目安 " : "いまの販促費 ") + yen(a.promo) + "/月（年 " + man(a.promo * 12) + "）";
-    var rows = [
-      ["売上", a.sales, 1, "is-sum", tag(a.salesEstimated)],
-      ["原価", a.cogs, a.cogsRate, "", ""],
-      ["粗利", a.gross, a.grossRate, "is-sum", ""]
-    ];
-    if (a.fixedEstimated) {
-      rows.push(["人件費", a.labor, a.std.labor / 100, "", tag(true)]);
-      rows.push(["家賃", a.rent, a.std.rent / 100, "", tag(true)]);
-      rows.push(["その他経費", a.other, a.std.other / 100, "", tag(true)]);
-    } else {
-      rows.push(["固定費（家賃・人件費など）", a.fixed, a.fixed / a.sales, "", tag(false)]);
-    }
-    rows.push(["販促費", a.promo, a.promoRate, "", tag(a.promoEstimated)]);
-    rows.push(["営業利益（目安）", a.profit, a.profit / a.sales, "is-sum is-profit", ""]);
-    els.plTable.innerHTML = "<tr><th>月あたり</th><td>金額</td><td>比率</td></tr>" + rows.map(function (r) {
-      var neg = r[1] < 0;
-      var cls = r[3].indexOf("is-profit") >= 0 ? (neg ? " class=\"is-neg\"" : " class=\"is-pos\"") : "";
-      return "<tr class=\"" + r[3] + "\"><th>" + r[0] + r[4] + "</th><td" + cls + ">" + (neg ? "△" : "") + yen(Math.abs(r[1])) + "</td><td" + cls + ">" + (r[2] * 100).toFixed(r[2] < 0.1 && r[2] > -0.1 ? 1 : 0) + "%</td></tr>";
-    }).join("");
-    els.plNote.innerHTML = a.profit >= 0
-      ? "業種の標準的な比率で見ると、月 <strong>" + yen(a.profit) + "</strong>（売上の " + (a.profit / a.sales * 100).toFixed(1) + "%）の営業利益が残る構造です。「推測」の行は業種の一般的な比率です。実際の数字が分かればヒアリング欄に入れてください。"
-      : "この条件では月 <strong>" + yen(-a.profit) + "</strong> の赤字構造です。固定費か販促費が売上に対して大きいか、売上規模が小さい状態です。下の損益分岐点で、あといくら売上が必要かを確認してください。";
-    // 損益分岐点
-    els.bepSales.innerHTML = man(a.bep) + "<span class=\"unit\">/月</span>";
-    els.bepSalesSub.textContent = "（固定費 " + man(a.fixed) + " ＋ 販促費 " + man(a.promo) + "）÷ 粗利率 " + Math.round(a.grossRate * 100) + "%";
-    els.bepGross.innerHTML = man(a.fixed + a.promo) + "<span class=\"unit\">/月</span>";
-    var gapEl = els.bepGap;
-    gapEl.innerHTML = (a.gap >= 0 ? "＋" : "△") + man(Math.abs(a.gap)) + "<span class=\"unit\">/月</span>";
-    gapEl.classList.toggle("is-good", a.gap >= 0); gapEl.classList.toggle("is-bad", a.gap < 0);
-    var mEl = els.bepMargin;
-    mEl.innerHTML = (a.margin * 100).toFixed(1) + "<span class=\"unit\">%</span>";
-    mEl.classList.toggle("is-good", a.margin >= 0.1); mEl.classList.toggle("is-bad", a.margin < 0);
-    els.bepCustomers.innerHTML = a.unitPrice > 0
-      ? Math.ceil(a.bepCustomers).toLocaleString("ja-JP") + "<span class=\"unit\">" + unitOf() + "（客単価 " + yen(a.unitPrice) + "）</span>"
-      : "—";
-    var html;
-    if (a.gap >= 0) {
-      html = "想定月商 <strong>" + man(a.sales) + "</strong> は損益分岐点 <strong>" + man(a.bep) + "</strong> を <strong>" + man(a.gap) + "</strong> 上回っています（安全余裕率 " + (a.margin * 100).toFixed(1) + "%）。" +
-        "ここから新規を増やした分は、原価を引いた <strong>粗利率 " + Math.round(a.grossRate * 100) + "%</strong> がそのまま利益の上乗せになります。" +
-        "<br>参考：新規1" + unitOf() + "（客単価 " + yen(a.unitPrice) + "）で粗利 <strong>" + yen(a.unitPrice * a.grossRate) + "</strong>。下のSTEP1のCPA相場と比べて、1" + unitOf() + "あたりの粗利がCPAを上回っていれば、初回の売上だけでも販促費を回収できます。";
-      els.bepApply.hidden = true;
-    } else {
-      html = "想定月商 <strong>" + man(a.sales) + "</strong> は損益分岐点 <strong>" + man(a.bep) + "</strong> に <strong>" + man(-a.gap) + "</strong> 届いていません。" +
-        "客単価 " + yen(a.unitPrice) + " なら、あと <strong>月 " + a.shortCustomers.toLocaleString("ja-JP") + unitOf() + "</strong> の売上が必要です。この人数を下のSTEP2「獲得したい新規獲得数」の目標にすると、必要な販促費が逆算できます。";
-      els.bepApply.hidden = false;
-      els.bepApply.textContent = "月 " + a.shortCustomers.toLocaleString("ja-JP") + unitOf() + " を STEP2 の目標に入れる";
-    }
-    els.bepBox.innerHTML = html;
-  }
-
-  els.bepApply.addEventListener("click", function () {
-    if (!lastAnalysis || !(lastAnalysis.shortCustomers > 0)) return;
-    var v = lastAnalysis.shortCustomers;
-    if (Number(els.adNewRange.max) < v) els.adNewRange.max = v;
-    els.adNew.value = v;
-    els.adNewRange.value = v;
-    els.bepApplied.textContent = "STEP2 の目標を 月 " + v.toLocaleString("ja-JP") + unitOf() + " にしました。";
-    els.bepApplied.hidden = false;
     render();
   });
 
@@ -2410,12 +1963,6 @@
       html += "<br>参考：情報誌だけで年間 " + peopleYear.toLocaleString("ja-JP") + unitOf() + " を獲得できた場合、実質CPAは <strong>" +
         yen(ourYear / peopleYear) + "</strong> になります。";
     }
-    if (lastAnalysis && lastAnalysis.promo > 0) {
-      var stdYear = lastAnalysis.promo * 12;
-      var vs = budgetYear / stdYear * 100;
-      html += "<br>ヒアリングの想定P/Lでは販促費の目安は <strong>年間 " + yen(stdYear) + "</strong>（月 " + yen(lastAnalysis.promo) + "・売上の " + (lastAnalysis.promoRate * 100).toFixed(1) + "%）。" +
-        "必要販促費はその <strong>" + vs.toFixed(0) + "%</strong>" + (vs <= 100 ? " に収まります。" : " で、目安を上回ります。目標を見直すか、CPAの低い媒体を組み合わせてください。");
-    }
 
     els.compareBox.innerHTML = html;
 
@@ -2513,9 +2060,6 @@
     var repeatRate = Math.min(1, Math.max(0, repeatRatePct / 100));
 
     renderUnits();
-    if (document.activeElement !== els.hUnitPrice) els.hUnitPrice.value = unitPrice.toLocaleString("ja-JP");
-    lastAnalysis = analyze(unitPrice);
-    renderAnalysis(lastAnalysis);
     renderTargetNote(adNew);
     renderTierState(cpa);
     renderCpaNote(cpa);
@@ -2538,7 +2082,6 @@
   applyCpaRange(currentGenre);
   setCpa(currentGenre.mid);
   applyPreset(currentGenre.preset);
-  els.hStaff.value = (PL_STD[currentGenre.key] || PL_STD.average).staff;
   updateAdCostFromTable();
   renderCpaRef();
   render();
